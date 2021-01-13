@@ -1,0 +1,30 @@
+........................
+VPN:
+
+
+
+
+
+
+
+Networking & Content Delivery ----End Pointes...........
+
+End POints..( Watch Tamil Video Sree harsha Verapalli)
+Back end connetivity for AWS Services...(s3 to RDS)
+
+..
+1.create vpc and create two subnetes private and public,
+2.launch two vm in private and public,and login public inst to private to rach private inst.. (Private means add Nat GATE ..)
+3.create s3 bucket..upold one object(file) and make public that bucket.
+4.tak s3 object url and serarch in broweser
+5.go public server and wget past link..
+ cat endpoints.txt  ....file opened..
+6.then pulic to private logine and wget past s3 link not conneting...
+7.then create end point -select aws service,then select VPC,Select Rou Table
+8.go and check thatprivate  rout table added on i.e end point ... 
+9.see end point service in that end poin id and private routing table.. 
+10. so now private vm wget past s3 link conneting... using end point ........rout..
+11.open that file--  .cat endpoint.txt  .edit file -- nano endpoint.txt
+  .. End Point is free.........
+12.end point service for Other AWS Account private linke........OTHER AWS ACCOUNT.. Same..
+

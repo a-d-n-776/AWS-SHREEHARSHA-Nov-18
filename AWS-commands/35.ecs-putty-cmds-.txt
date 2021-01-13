@@ -1,0 +1,59 @@
+Using username "ec2-user".
+Authenticating with public key "imported-openssh-key"
+Passphrase for key "imported-openssh-key":
+
+   __|  __|  __|
+   _|  (   \__ \   Amazon ECS-Optimized Amazon Linux AMI 2018.03.i
+ ____|\___|____/
+
+For documentation, visit http://aws.amazon.com/documentation/ecs
+7 package(s) needed for security, out of 8 available
+Run "sudo yum update" to apply all updates.
+[ec2-user@ip-10-1-2-245 ~]$ sudo su -
+[root@ip-10-1-2-245 ~]# docker --version
+Docker version 18.06.1-ce, build e68fc7a215d7133c34aa18e3b72b4a21fd0c6136
+[root@ip-10-1-2-245 ~]# docker ps
+CONTAINER ID        IMAGE                            COMMAND             CREATED                                                                                                     STATUS              PORTS               NAMES
+4719f96f28c1        amazon/amazon-ecs-agent:latest   "/agent"            7 minut                                                                                        es ago       Up 7 minutes                            ecs-agent
+[root@ip-10-1-2-245 ~]#
+Using username "ec2-user".
+Authenticating with public key "imported-openssh-key"
+Passphrase for key "imported-openssh-key":
+Last login: Mon Dec 17 02:25:50 2018 from 157.49.172.124
+
+   __|  __|  __|
+   _|  (   \__ \   Amazon ECS-Optimized Amazon Linux AMI 2018.03.i
+ ____|\___|____/
+
+For documentation, visit http://aws.amazon.com/documentation/ecs
+7 package(s) needed for security, out of 8 available
+Run "sudo yum update" to apply all updates.
+[ec2-user@ip-10-1-2-245 ~]$ sudo su -
+Last login: Mon Dec 17 02:25:54 UTC 2018 on pts/0
+[root@ip-10-1-2-245 ~]# docker ps
+CONTAINER ID        IMAGE                            COMMAND                  CR                                                                                        EATED             STATUS              PORTS                   NAMES
+b7d4aa55446d        nginx:latest                     "nginx -g 'daemon of…"   4                                                                                         minutes ago       Up 4 minutes        0.0.0.0:32768->80/tcp   ecs-nginx-naveen-1                                                                                        -nginx-aef387b5f6e9cef3d301
+4719f96f28c1        amazon/amazon-ecs-agent:latest   "/agent"                 37                                                                                         minutes ago      Up 37 minutes                               ecs-agent
+[root@ip-10-1-2-245 ~]# ^C
+Using username "ec2-user".
+Authenticating with public key "imported-openssh-key"
+Passphrase for key "imported-openssh-key":
+Last login: Mon Dec 17 02:56:49 2018 from 157.49.172.124
+
+   __|  __|  __|
+   _|  (   \__ \   Amazon ECS-Optimized Amazon Linux AMI 2018.03.i
+ ____|\___|____/
+
+For documentation, visit http://aws.amazon.com/documentation/ecs
+7 package(s) needed for security, out of 8 available
+Run "sudo yum update" to apply all updates.
+[ec2-user@ip-10-1-2-245 ~]$ sudo su -
+Last login: Mon Dec 17 02:56:54 UTC 2018 on pts/1
+[root@ip-10-1-2-245 ~]# docker ps
+CONTAINER ID        IMAGE                            COMMAND                  CR                                                                                        EATED             STATUS              PORTS                   NAMES
+e2136b7e0060        nginx:latest                     "nginx -g 'daemon of…"   2                                                                                         minutes ago       Up 2 minutes        0.0.0.0:32770->80/tcp   ecs-nginx-naveen-1                                                                                        -nginx-80baa8aaedd59fc92200
+29a039ca9ac1        nginx:latest                     "nginx -g 'daemon of…"   2                                                                                         minutes ago       Up 2 minutes        0.0.0.0:32769->80/tcp   ecs-nginx-naveen-1                                                                                        -nginx-dca2bdf197ad89c9ca01
+b7d4aa55446d        nginx:latest                     "nginx -g 'daemon of…"   18                                                                                         minutes ago      Up 17 minutes       0.0.0.0:32768->80/tcp   ecs-nginx-naveen-1                                                                                        -nginx-aef387b5f6e9cef3d301
+4719f96f28c1        amazon/amazon-ecs-agent:latest   "/agent"                 Ab                                                                                        out an hour ago   Up About an hour                            ecs-agent
+[root@ip-10-1-2-245 ~]# ^C
+[root@ip-10-1-2-245 ~]#

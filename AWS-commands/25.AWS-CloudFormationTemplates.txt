@@ -1,0 +1,43 @@
+
+..Management & Governance - CloudFormation
+
+.........................
+IAAC - Infra As A Code.(Writ in JSON, YAML are Declarativ Scrips langw)
+
+Infra consistance ,
+in code Boolen- True or flase,String - not a number("10.1.0.0/16") , 
+https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc.html
+
+{} - for code starting to end, [] - for List exam Tages more than one do
+..
+CHECK CODE ONLINE : https://jsonlint.com/
+1.Create a stack::
+
+.24.43..Go cloud Formation-Stacks-chossfile-select-next-(27.43)-StackName-enter Namevpc-
+-vpccider,pulicesubnetcider,namevpc-Next-Advanced options-Stack policy,Rollback configuration,
+Notification options,Stack creation options, -Next-Create-keep this-file in git or bitBucket,-go
+and check VPC,sunet,,,,all are created.
+
+
+Only infra strutcher created-now adding one machineusing cloudformation-(42.00)
+
+-action-Update Stack-choosefile-next-next-next-Previe your changes(Under Replasment alwas Fals..ok..True means Danger chk )- now instance creatd
+,,..
+if key pair can updating - @the time Replacent getting TruMeans Your instance Deleting and newlly creating..
+
+you can do cloud formation in GIU Doing........(51.57)
+
+2.Create a Stack Set::
+
+,..........
+IN stack set you can deploy in other acoun also.........lik DEV,PROD,TEST,/...........
+
+3.Degin a Templet:
+
+....CREATE A DIGIN- Dragg and Drop...
+
+4.Create  a Templet From Your Existing Resource::
+
+...cloudformer........
+aws cloud former youtub.....
+

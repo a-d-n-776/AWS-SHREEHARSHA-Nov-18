@@ -1,0 +1,73 @@
+........................
+1. Placement Groups:;
+
+One AZ Having two Subnet in b/t Doing..
+
+
+
+
+
+
+
+
+
+
+
+
+2.Tenancy:;1.shared-run,2.dedicated-run,3.dedicated host
+
+
+
+
+HIPAA (Health Insurance Portability and Accountability Act of 1996)
+ is United States legislation that provides data privacy and 
+security provisions for safeguarding medical information.
+
+
+
+
+
+
+3.T2/T3 Unlimited:; only for t2micro,nano small cpu instal avilable..
+cpu memory......required .
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4.Network interfaces:;one machen can use two differnt sub net but in same AZ.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+boost straping or user data
+sudo su -
+#!/bin/bash
+yum update -y
+yum install nginx  -y
+service nginx start/stop/restart
+yum install tree -y
+
+..
+he AWS AMI and the Xen hypervisor. Every AWS AMI uses the Xen hypervisor on bare metal.
+ Xen offers two kinds of virtualization:
+ HVM (Hardware Virtual Machine) and PV (Paravirtualization)

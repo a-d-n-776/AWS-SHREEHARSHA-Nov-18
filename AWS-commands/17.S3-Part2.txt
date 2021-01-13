@@ -1,0 +1,83 @@
+
+
+S3-buckets-object(5TB)-
+
+......AWS S3-Bucket Properties.......
+
+
+1.Versioning: Like Git Hub Repository..
+
+
+2.Server access logging:
+
+this buckt data logs to giving other bucket..
+
+
+3.Static website hosting: index.html,error.html- config Route53
+
+
+4.Object-level logging:
+
+ cloudTrail...config..
+
+
+5.Default encryption:
+AES-256,AWS-KMS
+
+
+6.Advanced settings:
+
+6.a)Object lock::
+
+6.b)Tags:;
+owner,env,,,,,,,
+
+6.c)Transfer acceleration::
+using endpoint for data trafer eassy..
+
+6.d)Events::
+Simple Notification Service use (SNS) to config..and getting mailes,,
+
+6.e)Requester pays::
+ Other persion login to their AWS account and Bill paied for that downloding data.
+..................................................................
+.................................................................
+..............................................
+
+......AWS S3-Bucket Permissions.......
+..permissions
+
+1.Public access settings::....(New read doc..).
+
+
+2.Access Control List::....read/write permission for other AWS AC.
+
+
+3.Bucket Policy:... 
+ google-s3 bucket polices(read,ip acess ,MFA,and more..)..and code in json check online in jsonlint.com
+  https://docs.aws.amazon.com/AmazonS3/latest/dev//example-bucket-policies.html
+  .Police Generator..........
+
+4.CORS Configuration::... ( cross origin resorce sharing.. ) 
+ .
+giving facebook throu..lik study.. doc 
+
+
+..
+
+in Network Load Balancer we giving Loges to S3 bucket,
+That Bucket loges can be studed by using ..
+GOOGLE- logz.io  - open web sit- add s3 bucket heare...
+,ELK ,..
+
+
+
+
+
+
+
+
+
+
+
+

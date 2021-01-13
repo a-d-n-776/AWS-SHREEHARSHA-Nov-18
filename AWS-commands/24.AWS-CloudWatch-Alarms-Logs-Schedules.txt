@@ -1,0 +1,64 @@
+............................................
+24.AWS-CloudWatch-Alarms-Logs-Schedules.....
+[ Management & Governance::CloudWatch,AWS Auto Scaling,CloudFormation,CloudTrail,Config,OpsWorks,
+Service Catalog,Systems Manager,Trusted Advisor,Managed Services,Control Tower,
+AWS License Manager,AWS Well-Architected Tool,Personal Health Dashboard ]
+...........................................................................................................
+1.CloudWatch::
+
+a))..CloudWatch-'Dashboards'-Createa dash board-name,create-selcte dash board typ-configure-all metrics-,
+--addwidget-select-config-allservice-cerate widget..watch video-- inthis usage montoring by using Wdgett..
+
+b))..Alarms-[Application Integration-Simple Notification Service-]..
+
+Alarms-Create Alarm-selectmetrics-billing- Total Estimatedchrg-usd-selectmetrics-exceds,send notifcation-so we creted in SNS her Avilable.
+-create aleram.. ..similarry in place of selct metics use other services also....
+
+-SNS-topics-createnwetopic-name,displynam-createtopic-selct that topic-Actions-Subscribe to topic-Protocal(email)-Endpoint(mailid)-create subcription
+- go yur email and conform-
+
+
+
+c))..Logs- :: ::;
+.go IAM -Create One Role-permisionsgive cloudwatclogs-rolename.
+.deploy on instance-give iam role-userdata -give nginx-create.login to server-
+ service nginx status-running-,(31.20) find / -nam *.log , yum install awslogs -y,
+nano /etc/awslogs/ ,(33.38),service awslogs status ,service awslogs start, ....now go to  logs in created.- 
+ /var/log/message,,/var/log/nginx/acess,/var/log/nginx/error
+ec2pubic ip acess all- cat /var/log/nginx/access.log....now go logs in /var/log/nginx/acess - open 
+
+......
+... move logs to S3 bucket using Action- Export Data to Aws S3-Buckt name..
+..in logs-select-Create metric filter-past ip number to filter pattern-Test pattern how many times 
+that ip hit our vm-assignmetric-giveName-create filter-now creatAlearm- if morthan 20 requsts sending maile to sns-getingmail.
+
+..google-Kibana ssh dashboard-see pics(ELK Stack--- but-ordrwise-logs Elasticserach-Kibana(LEK)
+kibana is Reporting Tool,in aws (Anaytics-Quicksight is sam)..
+
+..EC2 Machine on side monitroring used Alearms but In sid Montring Logs...
+
+D)).Events::
+Events-Getstart- Event Pattern,Schedule
+
+.Event Pattern(at that time): for any one ec2 inst stoped getting notification ,
+or ec2inst reboot if shudunde time. so event contination used..configuration -rule define -name,descrpt-create rule.
+so if you stoded instance it will automatically- reboot and server will up.. like even..
+
+.Schedule( planed ) : abou like but sheduled.. 
+
+if you want create custom event- go -EC2-Lambda-(56.25)-create function-Author from sratch-name,
+pathon2.7,-creatfunction-past yur custom code-fist stoped next use start code-save- 
+test-event name shdwn-creat-Test-Now your instance is stoping ,, 
+simlaryafter stoded inst.. use other starting function and start the instance(58.18)
+
+
+..NOw you use this lamda in Events....
+ simlary for snapshots...(1.02)(using inst Tages used in code..)
+
+e.))Metrics:-
+  inside loges...like alerms if any ip acess mor than 20...getting email..like.
+
+
+
+
+

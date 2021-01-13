@@ -1,0 +1,49 @@
+               ........
+A.Security, Identity, & Compliance::
+..............................................
+
+1.Resource Access Manager:(RAM):
+ Create a resource share- (NAME ,Resources -subnet,trasientgate way sharing to other aws accounts)
+
+2.Security Hub:(7.18) 
+checking problems taking all inf and gives report...Like Gaurd Duty..
+
+
+
+B..Networking & Content Delivery::
+.........................................
+
+1.Route 53::(8.22)
+DNS: ip to name,name to ip,
+two servers set up in 2 differen region and connect rout53,
+
+                            a.naveenmj.xyz (public ip of inst or elb end point) ....
+www.naveenmj.xyz--
+                            b.naveenmj.xyz (public ip of inst or elb end point) ....
+
+
+
+yum update -y,nano /usr/share/nginx/html/index.html
+
+
+.Traffic flow
+.Domains
+.Resolver
+
+
+
+2.CloudFront:: (52.29). ...(Example Netflex)..
+speed up web sit by using cash memory datas,,...s3 data can host...use s3 cash data...
+
+
+www.naveenmj.xyz-alias to cloud front selct dns name -- s3bucket,and other also....works like...
+
+
+
+3.Direct Connect:
+   .data center to aws authorised isp gives one line ex: https://www.netmagicsolutions.com/ in benglore...
+    google - aws direct connect mega port youtub. link .. https://www.youtube.com/watch?v=U-hOOcWCdWM
+
+
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                           

@@ -1,0 +1,32 @@
+
+https://s3.amazonaws.com/awssampledb/LoadingDataSampleFiles.zip
+
+https://docs.aws.amazon.com/AmazonS3/latest/dev/example-bucket-policies.html
+
+
+https://docs.aws.amazon.com/redshift/latest/dg/tutorial-loading-run-copy.html#tutorial-loading-run-copy-replaceables
+
+power bi desktop
+
+
+
+create table myevent(
+eventid int,
+eventname varchar(200),
+eventcity varchar(30));
+
+out put:
+Table myevent created
+
+Execution time: 0.28s
+
+
+
+accesing s3 to readshift db
+
+
+copy part from 's3://<your-bucket-name>/load/part-csv.tbl' 
+credentials 'aws_access_key_id=<Your-Access-Key-ID>;aws_secret_access_key=<Your-Secret-Access-Key>' 
+csv
+null as '\000';
+

@@ -1,0 +1,172 @@
+
+google.. aws cli downlode..
+
+set variable in computer..       C:\Program Files\Amazon\AWSCLI
+
+install vm in aws and open putty terminal..
+ec2-metadata
+ssh-keygen ....enter button 3re times..
+
+[root@ip-10-1-1-100 ~]# ls /root/.ssh/
+authorized_keys  id_rsa  id_rsa.pub    ...............pem and publick files.respectivally.
+[root@ip-10-1-1-100 ~]# cat /root/.ssh/id_rsa.pub
+ 
+..
+create two users 
+user-1
+AKIAJ2LEC2CDIICKN2FA
+N52J+9Obe/w8YAuyqO8UBDhfnu4AawzE0sghnhqa
+..
+user-2..
+AKIAIQ5TNEZBKAMOMIXA
+juZKXo3+BzS1iR6C9584ynb3XjzaP3IwGdY4n6kv
+
+aws configure ...enter aces.id,pas,region,formate
+
+[root@ip-10-1-1-100 ~]# cd ~
+[root@ip-10-1-1-100 ~]# pwd
+/root
+ 
+[root@ip-10-1-1-100 ~]# cd ~/.ssh/
+[root@ip-10-1-1-100 .ssh]#
+[root@ip-10-1-1-100 .ssh]# ll
+total 12
+-rw------- 1 root root  544 Dec  8 15:27 authorized_keys
+-rw------- 1 root root 1679 Dec  8 15:43 id_rsa
+-rw-r--r-- 1 root root  400 Dec  8 15:43 id_rsa.pub
+..............................................................  i am finding my aces id and key(root user ok other one danger)
+[root@ip-10-1-1-100 .ssh]# cd ..
+[root@ip-10-1-1-100 ~]# cd .aws/
+[root@ip-10-1-1-100 .aws]# ll
+total 8
+-rw------- 1 root root  43 Dec  8 16:07 config
+-rw------- 1 root root 116 Dec  8 16:07 credentials
+[root@ip-10-1-1-100 .aws]# cat credentials
+[default]
+aws_access_key_id = AKIAJ2LEC2CDIICKN2FA
+aws_secret_access_key = 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
+[root@ip-10-1-1-100 .aws]#
+logout
+exit..................................................................
+log in without root user aws s3 ls ....not acessing
+then login to       sudo aws s3 ls  ....getting
+
+..........................................................................
+[root@ip-10-1-1-100 ~]# aws iam list-users
+{
+    "Users": [
+        {
+            "UserName": "s3acess",
+            "Path": "/",
+            "CreateDate": "2018-12-08T15:58:51Z",
+            "UserId": "AIDAION3ZOQILEIMTOHLO",
+            "Arn": "arn:aws:iam::144704311619:user/s3acess"
+        },
+        {
+            "UserName": "terraform",
+            "Path": "/",
+            "CreateDate": "2018-12-08T09:30:41Z",
+            "UserId": "AIDAIV5TFL5HBYOL6UEFI",
+            "Arn": "arn:aws:iam::144704311619:user/terraform"
+        }
+    ]
+}
+.........................................................
+[root@ip-10-1-1-100 ~]# aws iam list-users --output table
+----------------------------------------------------------------------------------------------------------------------
+|                                                      ListUsers                                                     |
++--------------------------------------------------------------------------------------------------------------------+
+||                                                       Users                                                      ||
+|+-------------------------------------------+-----------------------+-------+------------------------+-------------+|
+||                    Arn                    |      CreateDate       | Path  |        UserId          |  UserName   ||
+|+-------------------------------------------+-----------------------+-------+------------------------+-------------+|
+||  arn:aws:iam::144704311619:user/s3acess   |  2018-12-08T15:58:51Z |  /    |  AIDAION3ZOQILEIMTOHLO |  s3acess    ||
+||  arn:aws:iam::144704311619:user/terraform |  2018-12-08T09:30:41Z |  /    |  AIDAIV5TFL5HBYOL6UEFI |  terraform  ||
+|+-------------------------------------------+-----------------------+-------+------------------------+-------------+|
+.........................................................
+.....................................................................................................................................
+
+.......one terminal cmd using two users differnet permisionss acessing in 1-terminall
+
+[root@ip-10-1-1-100 ~]# aws configure --profile testuser1 ........testuser1  means user ...check..
+AWS Access Key ID [None]: AKIAIQ5TNEZBKAMOMIXA
+AWS Secret Access Key [None]: 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
+Default region name [None]: us-east-1
+Default output format [None]: json
+ 
+[root@ip-10-1-1-100 ~]# aws s3 ls
+2018-12-05 06:45:52 billingawsnaveen
+2018-11-11 20:33:08 bucket.business
+2018-11-14 04:14:43 naveenmj.log1
+2018-11-11 19:33:42 naveenmj.xyz
+2018-11-12 06:05:35 www.naveenmj.xyz
+
+[root@ip-10-1-1-100 ~]# aws s3 ls --profile testuser1
+2018-12-05 06:45:52 billingawsnaveen
+2018-11-11 20:33:08 bucket.business
+2018-11-14 04:14:43 naveenmj.log1
+2018-11-11 19:33:42 naveenmj.xyz
+2018-11-12 06:05:35 www.naveenmj.xyz
+[root@ip-10-1-1-100 ~]#
+
+...
+aws ec2 describe-instances
+aws ec2 describe-instances --output table     ......getting instance detales in table
+...........................
+....auto filling commandes in aws below cmd use......
+complete -c aws_completer aws
+
+..
+[root@ip-10-1-1-100 ~]# aws ec2 describe-instances --profile testuser1 --output table      .......not have acessing permisions this user getting below error. 
+
+An error occurred (UnauthorizedOperation) when calling the DescribeInstances operation: You are not authorized to perform this operation.
+[root@ip-10-1-1-100 ~]#
+after give ec2 full accese for testuser1 then try below cmd getting ..
+aws ec2 describe-instances --profile testuser1 --output table 
+
+................................................................
+[root@ip-10-1-1-100 ~]# cat ~/.aws/credentials
+[default]
+aws_access_key_id = AKIAJ2LEC2CDIICKN2FA
+aws_secret_access_key = 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
+[testuser1]
+aws_access_key_id = AKIAIQ5TNEZBKAMOMIXA
+aws_secret_access_key = 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
+.....
+.......s3 bucket deleting.....
+
+root@ip-10-1-1-100 ~]# aws s3 rb s3://abcnaveenn --force        ......removing one s3 bucket...only..
+remove_bucket: abcnaveenn
+.......
+An error occurred (RequestTimeTooSkewed) when calling the ListBuckets operation: The difference between the request time and t
+arge. this error un winows CLI installed then,,,,,,set the timeings...
+.
+for deleting multiple buckets...
+[root@ip-10-1-1-100 ~]# nano dels3.sh ...in this file kepp all removing buckets like blow 
+#!/bin/bash
+aws s3 rb s3://naveenbucket1 --force
+echo "Deleted Bucket1"
+aws s3 rb s3://naveenbucket2 --force
+echo "Deleted Bucket2"
+
+... similary for more buckets abou shows...
+
+[root@ip-10-1-1-100 ~]# crontab -e ....for keeping scripts and runing schduled..
+........
+[root@ip-10-1-1-100 ~]# rm -rf ~/.aws/    ..removing all user 
+ aws s3 ls  ... not opening folders becos deleted all users..
+  if problem with users create one role.....to assine to instance..
+  aws s3 ls ...geting buckets inf... after attaching iam role...  
+  actually role also creates one aces id and key.. but chanes periodically.. by check below cmds..
+  curl http://169.254.169.254/latest/meta-data/
+  curl http://169.254.169.254/latest/meta-data/iam/
+  curl http://169.254.169.254/latest/meta-data/iam/security-credentials/
+  curl http://169.254.169.254/latest/meta-data/iam/security-credentials/naveens3fullacess  
+  ..last one is  "role name"   ...getting 1.AccessKeyId,2.SecretAccessKey,3.Token ..expired 30 minitus..like
+  we can do every thingin CLI, what can i do on GUI 
+
+
+
+
+
+

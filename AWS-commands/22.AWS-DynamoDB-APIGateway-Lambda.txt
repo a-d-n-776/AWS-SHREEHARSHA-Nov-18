@@ -1,0 +1,48 @@
+,,..........22.AWS-DynamoDB-APIGateway-Lambda...............
+.Database:
+RDS
+DynamoDB
+ElastiCache
+Neptune
+Amazon Redshift
+.....................................................
+DynamoDB::---
+........
+
+RDS- strctured Database
+DynamoDB -Non-Structed - NoSl(Mango,Cassandra) for ex- bigboss naminee..
+
+
+.SelectDynamoDB- createtable-table name(BookStore),number(bookid),-createe
+
+.EC2-Lambda-CreateFunction-Author from Scratch-Name,node.js8.10,role,-creatr function,
+-writecode(18.10)-save-Test-( Event name,create )- Test
+.i want this lambda and Dynamo DB link...
+.in Lambda-Functions- BluePrints- Search Mobile-select Mobile back end-Basci information( Name,Role,ExistinRole-give this role Dynamo DB acess-)
+ -createFunction- test- configre test event( event name-test )- writ whic data we want to dynamo db..in json(27.34)
+ -create- test- ---now this scripts run and data can write on DynamoDB By using ROle permisions wer r given,
+ -server less means using Lambda...........
+ 
+--now go DynamoDB-Items-created,,
+--next Golamda-select test(31.30 )- modifi script-save-test-suss.
+--now go DynamoDB-Items-created,with modified scriptes..ok now Lamda and Dynamodb connection ok..
+
+................
+
+Networking & Content Delivery - API Gateway-Getstart-Nwe API-name,-create API-Actions-Create Resource-Resorce name,Create Resource
+-Actions-create Method-select get- , Actions-create Method-put,.
+select-get- Lambadfunction name-save-( note: Dynamodb, api,lambda all are in same region )
+-select-Put- Lambadfunction name-save.
+
+.. go put-Test -Enter scripts-test ---now go DynamoDB-Items-created
+.. 
+
+GO -GOOLE-Rest clint online-clint.rest.com-open two tabes one for put,other get,-...now go API Actions-Deploy API-New stage,name,-Deploy
+ - now getting inoke URL-(main) and get and put also geting difernt url we use this get,put urls..
+..past into Web broser rest clint-@ put side run scripts- --now go DynamoDB-Items-created,,
+
+...other tab- gettab- enter scripts to read-send- geting onf from DynamoDB
+
+
+https://aws.amazon.com/lambda/resources/refarch/refarch-webapp/
+

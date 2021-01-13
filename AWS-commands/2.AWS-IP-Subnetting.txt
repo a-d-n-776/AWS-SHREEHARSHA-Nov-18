@@ -1,0 +1,7 @@
+...............
+1.ip nubers and two compnes pvt ip and public..
+2.each country having set of ip.. address.
+3.ips are taken ISP only...
+4.ip rane for india google it
+5.subnetting.. google sub net calculater..
+

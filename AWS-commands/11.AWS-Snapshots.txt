@@ -1,0 +1,71 @@
+.....AWS-SNAPSHOTS..............
+
+......different types of EBS  volumes... see pics..
+IOPS I/P O/P Per second..
+1.General purpose SSD (gp2)
+2.Provisioned IOPS SSD (io1)
+3.cloud HDD 
+4.Throughput optimisted HDD
+5.Magnetic
+
+aws caluclater...
+.................
+.......
+Snap shot.....incremental and decrimental..
+
+patching, time we takin befor snap shot..
+
+...mkdir /testfolder,cd /testfolder/,mkdir nosnaptaken,cd nosnaptaken/,nano file1,cd ..  , ll
+ go volume create a snapshot.. snap1 (1st snap copy all data..)
+ volume can not transfer other location but using snap shot you can transfore..
+
+..........
+...inside testfolder../mkdir snap1,cd snap1/,nano file2, cd.. , ll
+take snap shot...snap2,,,,(changes taken )
+
+..............................
+
+
+
+...inside testfolder../mkdir snap2,cd snap2/,nano file3, cd.. , ll
+take snap shot...snap3,,,,,,,,(changes taken )
+
+
+....................................................
+
+...inside testfolder../mkdir snap3,cd snap3/,nano file4, cd.. , ll
+take snap shot...snap4,(changes taken )
+
+.............
+
+all snap shots back end stored in S3 , But root volume in EBS..
+
+
+..
+...cd /testfolder/ , ll,rm -rf * , ll, ( all folders deleted...)
+
+i want restore all folders.. so latest snap shot to chane volume and assined to inst..
+(sanp shot in s3 but volume is in EBS.. IMP)
+
+
+...lsblk(before attaching volume),lsblk(after attaching volumes..)
+by default that volume created disk to part..just reqired mounting..
+...cd .. ,mkdir /restore ,mount /dev/xvdf1 /restore/ ,ls /restore/testfolder/
+...cp -rf /restore/testfolder/ /testfolder/ , cleare
+... ls /testfolder/ , ls /testfolder/testfolder/
+... lsblk,umount /restore ..........delete that volume...in volmes...(data moved in root volume..)
+
+
+............decrimental.........
+if i am deleted snap 123 then that all data stored in snap4..
+if i am deletd snap4 very denger....... not restored ...
+.............................
+...............Snapshot Lifecycle Policy.....................
+
+dailly,, time 21.oo, 30 snaps,, last 1 month recycled...
+othe wis using lamda script....
+
+.........machine inf..
+in putty..
+...ec2-metadata,curl http://169.254.169.254/latest/meta-data/
+(google ec2 meta data shell script..)

@@ -1,0 +1,76 @@
+
+A.Security, Identity, & Compliance:::(Cognito,)
+......................................
+
+1.Cognito:
+
+ Amazon Cognito offers user pools and identity pools.
+User pools are user directories that provide sign-up and sign-in options for your app users. 
+Identity pools provide AWS credentials to grant your users access to other AWS services
+
+..IAM - Identity providers:
+
+
+(6.42)...
+
+.Create s3 bucket and give public access Permision,
+
+.google search --github wildrydes..
+https://github.com/aws-samples/aws-serverless-workshops/tree/master/WebApplication/1_StaticWebHosting
+
+
+.in windos cmd aws user acess id key login then past below link..with S3 Buckt check..
+
+.aws s3 sync s3://wildrydes-us-east-1/WebApplication/1_StaticWebHosting/website s3://www.naveenmj.xyz --region US-EAST-1
+.aws s3 sync s3://wildrydes-us-east-1/WebApplication/1_StaticWebHosting/website s3:::pay2 --region US-EAST-1 
+.Go s3 bucket and inex file logine and see.. required some config..
+
+.login to cmd awsconfigur and give acces id and key give s3 premision then past abou link all data copied  to s3 bucket
+
+..go cognito(13.03)
+.cognito-Manage user polls-Create a user pool-Poolname,-Reviewdefalts-
+-Create poll- poolid getting.( us-east-1_UmzaM59UI )
+
+.App Clints-add appcclint name,-Create app clint-Getting App clint id.( 5sa1s5gj0874dcgk64316q5n3s )
+
+.now this poolid and app clint id - use @ S3 Bucket-js-config.js(downlod this file add and uplode..)
+go s3bucket-register.html-go that link- Register- mailgetting vericication code- verfiy.
+.GO-cognito- user and group-Displaying emailids.
+.GO-S3BUCKET-sign.html-go browser-entermail id, pass.- ok..(21.08), 
+
+[(25.00).video..
+ 1.User poll- using email and reg and login(ex: sbi net bankin )
+ 2.identity polles- login with facbook or login with gmail...(Quara.com)]
+.finally delete..(30.35)
+
+
+.youcan set your doimin also,
+
+
+
+2.Certificate Manager:(32.00)
+
+.AWS certificat used in AWS only and config in load balancer, cloud front,
+
+
+
+3.Key Management Service:: (43.55)
+
+encrption key getting .ex go volumes her encrption check mark add key.. like used
+
+
+4.CloudHSM::
+
+
+5.WAF & Shield:(web Applicatio Firewall and Shield):(47.55)
+ a.AWS WAF--
+
+ b.AWS Shield--
+
+ c.AWS Firewall Manager--
+
+
+6.Artifact::(53.17):
+
+cntol+F - PC
+

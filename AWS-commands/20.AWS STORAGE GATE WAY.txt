@@ -1,0 +1,50 @@
+...................
+Storage::---
+S3
+EFS
+FSx
+S3 Glacier
+Storage Gateway
+.......................................
+
+Storage Gateway:::--
+.........................................
+
+EBS - can connet to the EC2 Machine
+EFS - can connet to the EC2 Machine
+
+1....
+ .Deploye one EC2 Machine..
+ .IAM- Create user-S3 Full acess-
+ .login to Machine-Putty-mkdir /testing, cd /testing, nano file1, cp file1 file2,
+  cp file1 file3,cp file1 file4,cp file1 file5, 
+ .aws s3 ls,aws configure,keyid,access key,us-east-1,json
+ .aws s3 ls,aws s3 help,aws s3 cp help,
+ 
+..... files copying from ec2 inst to s3 bucket.....by manually...
+ .aws s3 cp file1 s3://mybucket/ .......here file1 from ec2vm my bucket means Your S3 buckt name..
+
+ . ..... files copying from ec2 inst to s3 bucket.....by automaticaly....
+
+
+ ....i want mount EC2 -s3 --------so directlly we cant mount by using AWS Storage gateway we can achive..
+
+Storage Gateway::---
+.Storage-Storage Gateway-File gateway-next-Amazone EC2 - 
+-m4.xlarg(4-16) - selet vpc-subnet-80gb root-add adtional 50 gb- next-secg(2049) - ok
+- in Host platform- next-IPaddress-(our 1st machine public ip 52.90.117.83)-
+connect to garway-gatwaytimezone,GWname- Activate gateway-waitfor5minitus - 
+-save and continue-createfileshare-give bucketname,n/wfilesystem,next-create fileshare-
+......
+,......now mount ec2 share folder to storge S3  via Storage gate way..
+.df -h, mkdir /s3mount, cd /s3mount, nano newfile1,cp newfile1 newfile2,cp newfile1 newfile3,cp newfile1 newfile4,cp newfile1 newfile5
+so automatically s3 bucket coped...
+
+
+STEPS...
+
+1.ec2istance
+2.s3 bucket create
+3.storage gatway(giving storage gw to s3 buckt link)
+4.mountin ec2-folder to storage gatwayaddress study in storage gatway mounting cmd for linux,...
+5. now keeping data into ec2 folder automatically copied to s3...

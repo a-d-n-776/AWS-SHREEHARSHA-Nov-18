@@ -1,0 +1,50 @@
+Database::
+RDS----------DB -OLTP(online transcation.process)-Application writting  to DB (RegularDB Transction)
+DynamoDB
+ElastiCache
+Neptune
+Amazon Redshift-----DB - OLAP(Online analytic Process)..like filpKart,amzone..
+.........................
+Amazon Redshift:::
+goole- aws redshift usee case philips, google- transfering Mysql to redshift,
+.Clusters-( Subnet groups create ) - Lanch cluster-cluteridentifer,name,username,pass,-Continue-selct nodetype-Continou-(one machine is started we cant terminated but stoped)
+ -selcet VPC -subnetgroup(in dash board intially created)- Public accessible yes but real time no-securitygroup- continue-launch cluster-view all cluster-wait 10 mintus..-
+ -Getting Endpoint-(17.07)-
+
+.google -sql work bench for redshift-java required-oprn SQL workbench-Manage Drivers-(in aws go in that connet client)-hear also i can downlode SQL Work bench,
+-JDBC Driver()JDBC4.2),downlode-select cluster-,,
+.-then go WorkBench-file-connectwindow-Managedrivers-selectjarfile to give that downloded jdbc drive location,- give name- ok-ok,
+.-giveprofilename-url( JDBC Url),give usename and pass of redshifts,connectscripts-(select version();ideal time 15), - ok
+ -autocommit-
+.google -readshift sample data-
+
+https://s3.amazonaws.com/awssampledb/LoadingDataSampleFiles.zip
+https://docs.aws.amazon.com/AmazonS3/latest/dev/example-bucket-policies.html
+https://docs.aws.amazon.com/redshift/latest/dg/tutorial-loading-run-copy.html#tutorial-loading-run-copy-replaceables
+...
+.....................................
+..go -S3-Create bucket-inbucket create folder-downlode datasample abovlink and uplode to this folder-
+..Go IAM-Create user- S3fullaccess-credential-
+
+..If -redShiftup-openworkbench-enter url JDBCurl-username,pass-Test-connection is sucess-
+ 
+ -ok- runscripts for any tables is ther in DB, run-see message-addtab-simmlry test(33.35)
+-..now creating table -Run scripts- simmlary other tables also created...
+  ..now run script for anny tables created.. yes having tables..now ..i.e we created tables in DB
+  
+
+.. Now i am loading data from S3  To DB in that part table......Via  using ..SQL Workbench..
+ connect-now using s3 bucketURN,IAM UserCrediantials we write scrip and Executed in SL Work Bench...
+.....................
+Now CReating Reports.............
+google--tableau,(42.51),powerbi desktop,
+
+.powerbi desktop-downode-open-Getdata-AmazoneReadShift- server(endpoint),Database(name),-DirectQuery-ok.- username and pass..then connect..
+ -selct yur folder table-load-....
+clusters-delet cluster-no snapre-delet...
+.....video..51..25........
+
+..ElastiCash:-- Redis,Memcashed;(for Ranver And Dipika marrage..like intraram,f.b cashing that data for theit websites..irtc tatkal ticket,,befor kepping cashing..) google- instagram redis,
+
+
+..Neptune::--Graph Data Base.

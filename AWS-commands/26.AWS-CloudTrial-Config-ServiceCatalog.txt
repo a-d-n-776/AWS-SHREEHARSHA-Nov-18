@@ -1,0 +1,51 @@
+26.AWS-CloudTrial-Config-ServiceCatalog:
+
+
+
+Management & Governance-( Config, CloudTrail,Service Catalog, Trusted Advisor,Managed Services,Systems Manager)
+
+1.Config:
+(money gone one time activation 2dolers)-First 10 rules	$2.00 per active AWS Config rule per Region per month
+-Setings-Turon-spcific types(ec2inst only)-Go EC2-Deploy one Machine-
+..Rules-Add rule-Search AMI-(approved amis-by-id)-selct-add  value (amiid) -Go Dashboard- (in this giving s3 buckt for transfering logs..)
+36.56---vido-now -In dash bord -select inst-selctinst-Configure Time line-watch histroy of ec2.. ...if add iam role to inst.. it is visable in that...
+-any chanes done it will be recorded..
+42.34-
+
+
+
+
+2. CloudTrail:
+(Gives inf this srvices: AWS Management Console,AWSSDKS,Command Line tolls,Other AWS Services)-
+ -cloud front gives 90 Dayshistroy i want more- GO Trailes- Create trail kepp LOgs into S3 Bucket(Her move to to Archiving ..used inbank re 8yers..)
+Trail name-...give S3 bucket- 
+
+
+
+
+3.Service Catalog:
+(All cloud formation templetss uploding and spicied user can giving permision),
+.Localportfolios-CreatePortfolio-Name,decrit,owner,-Create-openthat pf-
+-uplode new product-Name,dec,providedny,-next-email,-next-uplode templet(cloudformtemplet)-
+-versiontitl,decr-Next- Review- Create. 
+ go Product list-  our created list visable-select-add P P -select- Add Users,Group or Role,
+-give acess to that groupe,,(27.02) - or  users or  roles......
+
+
+.Try working or not-(27.32) - login to i.e user and  go - service catalog-productlist-Launch Product-Name-select vesion- Next-comes like clod formation VPc Cider...
+ -Next-next-next-Launch-... This not free service...
+.delting -delte users in root account given permision in - service catalog- then delte....(32.11)
+
+4.Trusted Advisor:(32.34)
+
+Trusted Advisor-open-(Cost Optimization,Performance,Security,Fault Tolerance,Service Limits,)
+-
+
+
+5.Managed Services:(38.00)
+
+
+6.Systems Manager:
+
+Find resorcegroup-( Creating Groups by using Tages)-(41.02)- Used in Big env.
+Bild-in insites for permormance of over all..

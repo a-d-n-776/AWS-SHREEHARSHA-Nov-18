@@ -1,0 +1,167 @@
+
+
+Harsha Veerapalli...
+
+.git clone https://github.com/username/repository
+ git clone https://github.com/NAVEENMJ/1
+
+git status
+
+.git init
+
+.git status ... getting red cloure  ( a.txt )
+
+.git add file.txt or  (git add .)
+
+.git push
+.git push -u origin master
+..................
+
+.git branch ---list of branches
+.git checkout -b branch ...Creaing branches
+
+.git merge branch ... presnt in master then merge..
+
+
+
+
+
+...................................
+
+.git status
+
+.git init
+
+.git status ... getting red cloure  ( a.txt )
+
+.git add file.txt
+
+.git status .... getting green cloure  ( new file: a.txt) 
+[if multipull files in folder use git add .]
+
+.git commit -m "COMMIT-1" ..
+Hear COMMIT-1 Means giving name in genralli changed  name given
+
+.git log ......changes ...times..
+
+modifi that file a.txt......
+.git status
+.git add .
+.git status 
+.git commit -m "COMMIT-2"
+.cls
+.git log
+
+
+..........i want go before comited version....
+.git checkout pastcommit ref.id
+........iwant to go privios comited version..
+.git checkout pastcommit ref.id
+
+.git branch ........Master..finding branchused
+.git checkout master  .........abou same ...
+
+.....Creating branches......
+.git branch    .........now getting Master...
+.git branch feature1  ...... feature1 branch created..
+.git branch    .........now getting feature1 , Master...
+
+.....now i want to made commites in feature1 branch..
+
+.git checkout feature1 .....branch switched to feature1 bracch..
+.git add .
+.git commite -m "F1C1"
+.git log
+
+.git branch
+.git checkout master  ........branch switched to master bracch..
+
+.git checkout feature1 .....branch switched to feature1 bracch..
+.git add .
+.git commite -m "F1C2"
+.git log
+
+.git checkout pastCOOMITE-1 id ..your file see now intall comite goes..
+.git log
+
+.git checkout pastCOOMITE-4 id ..your file see now ..
+.git log
+
+.git branch
+.git checkout feature1
+
+...............2nd Branch........
+
+.git branch feature2
+.git checkout feature2
+.git log
+
+.git branch
+.git status
+.git add .
+.git commit -m "F2C1"
+
+.git status
+.git add .
+.git commit -m "F2C2"
+.git log
+
+.....................................................
+.git checkout master 
+.
+.git status
+.git add .
+.git commit -m "Added VPC Name Parameter" 
+.git log
+
+..
+.git checkout -b feature3 .........shree harsha video..41.32.
+.git log
+
+
+.......merging branches.............
+.......................................
+.git checkout master
+.git merge feature3 .. check conflicts getting..
+.
+
+
+https://rubygarage.org/blog/most-basic-git-commands-with-examples
+
+
+
+
+
+
+
+
+
+.................................................................
+kepping this data into version controll..web sit or Git hub or bit bucket
+................................................................
+
+
+
+
+
+
+
+
+
+
+
+......................................................
+
+…or create a new repository on the command line
+echo "# 2" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/NAVEENMJ/2.git
+git push -u origin master
+
+…or push an existing repository from the command line
+git remote add origin https://github.com/NAVEENMJ/2.git
+git push -u origin master
+
+...................................................................

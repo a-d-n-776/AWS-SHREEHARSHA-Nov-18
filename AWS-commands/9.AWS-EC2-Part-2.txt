@@ -1,0 +1,42 @@
+
+
+...............
+1.aws launch template::
+
+Create launch template--version-AMI id-keypair-scg-ntwrk-userdata
+go acctions-Launch inst frm Template-Source launch template-Source template version*
+-Number of instances
+
+
+2.Spot requests::
+
+spot request--pricing history
+.Request Spot Instances:1.requests 2.request and maintain 3.reserve for duration .. old blow new..
+
+.Request Spot Instances--1.Load balancing workloads 2.Flexible workloads
+                         3.Big data workloads 4.Defined duration workloads
+
+3.Reserved Instance:::
+
+Platform  Linux/UNIX,Tenancy  Default,  Offering Class, 
+Instance Type t2.micro,Term (12 months - 36 months),
+Payment Option 
+
+
+
+4.shcheduled Reserved Instances:: 
+
+for wekkly and monthlly and spcific time... from date to To Date..
+( Reserve Capacity, Plan Ahead and Save, Run on Your Schedule)
+.Create a schedule--Starting(Dates,,) on,or duration(1H,2H,,),Recurring(daily,wekkly,monthly)
+.Instance details.-----------
+
+
+5.Dedicated Hosts::
+
+
+
+
+
+6.Capacity Reservation: 
+ constant hardware ... used spacic time reserved...

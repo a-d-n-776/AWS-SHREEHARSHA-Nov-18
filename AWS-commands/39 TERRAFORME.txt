@@ -1,0 +1,37 @@
+
+
+git code....
+
+https://github.com/mavrick202/terraformsingleinstance
+
+https://www.knanda.net/
+
+in windos cmd
+
+
+C:\Users\NAVEEN>
+C:\Users\NAVEEN>cd\
+
+C:\>cd C:\Users\NAVEEN\Downloads\39.terraform_0.11.10_windows_386
+
+C:\Users\NAVEEN\Downloads\39.terraform_0.11.10_windows_386>
+
+dir
+terraform init
+terraform plan
+
+.terraform plan --var-file test.tfvars
+
+.terraform apply --var-file test.tfvars
+yes
+
+.terraform destroy --var-file test.tfvars
+yes
+
+
+
+
+..main.tf -variables.tf - ec2.tf - test.tfvar  ...
+  ( After completing Task- terraform.tfstate    File Created..)
+
+

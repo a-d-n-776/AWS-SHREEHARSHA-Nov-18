@@ -1,0 +1,183 @@
+.................
+..create two vms 1.puppet managment..20gb. puppetmaster     2.puppet clint...puppetclint
+
+1.login to puppet management
+ubuntu@ip-10-1-1-100:~$ sudo su -
+root@ip-10-1-1-100:~# nano /etc/hostname   ....... replace pvtip to puppet
+root@ip-10-1-1-100:~# nano /etc/hosts ...add 10.1.1.100      puppet.local    puppet          
+                                             10.1.2.200      puppetagent.local       puppetagent
+
+in puppet.local =host name.domain name
+
+ec2-100-27-7-86.compute-1.amazonaws.com..... FQDN (fully Qualified  domain name)
+----------------  *******************
+host name(server name)   domain name
+
+root@ip-10-1-1-100:~# reboot
+
+...........Simillarlly..............
+
+..login to puppetclinte......................................................( Clinte )
+
+ubuntu@ip-10-1-2-200:~$ sudo su -
+root@ip-10-1-2-200:~# nano /etc/hostname ..replace pvti.p to puppetagent
+root@ip-10-1-2-200:~# nano /etc/hosts ....10.1.1.100      puppet.local    puppet          
+..                                          10.1.1.200      puppetagent.local       puppetagent
+root@puppetagent:~# ping puppet
+..
+
+....in puppet.........................................
+
+..google.. install puppet on ubuntu 16.04 ,,
+https://puppet.com/docs/puppet/5.3/puppet_platform.html .....websit
+
+wget https://apt.puppetlabs.com/puppet5-release-xenial.deb
+sudo dpkg -i puppet5-release-xenial.deb
+sudo apt update
+
+https://puppet.com/docs/puppetserver/5.2/install_from_packages.html ......websit
+
+apt-get install puppetserver
+reboot.....
+service puppetserver start
+
+root@puppet:~# cd /opt/puppetlabs/puppet/bin
+root@puppet:/opt/puppetlabs/puppet/bin# ./puppet --version
+root@puppet:/opt/puppetlabs/puppet/bin# service puppet status
+
+root@puppet:/# ping puppetagent
+
+
+..login to puppetclinte....................................................( Clinte )
+
+wget https://apt.puppetlabs.com/puppet5-release-xenial.deb
+sudo dpkg -i puppet5-release-xenial.deb
+sudo apt update
+
+https://puppet.com/docs/puppet/5.3/install_linux.html  ..websit google
+
+sudo apt-get install puppet-agent
+...
+cp /opt/puppetlabs/puppet/bin/* /usr/local/bin/
+root@puppetagent:~# puppet -t
+...
+
+...........in puppet........................................................
+
+root@puppet:~# cp /opt/puppetlabs/puppet/bin/* /usr/local/bin/
+root@puppet:~# puppet cert list
+..
+puppet cert list
+puppet cert list -all
+puppet cert list
+puppet cert sign puppetagent.local
+...
+cd /etc/puppetlabs/
+code/environments/
+ll ..........hear we can creat differen environment folders (ex: production, testing,)
+cd production/ ,ll
+cd manifests/            ........her manifests in chefe ..coock books
+google search .create a user in puppet manifest ..below link directlly
+https://puppet.com/docs/puppet/4.9/quick_start_user_group.html
+
+
+     user { 'testuser1':
+ 	      ensure           => 'present',
+              home             => '/home/testuser1',
+              password         => '!!', ...................enter encripted pass..
+              password_max_age => '99999',
+              password_min_age => '0',
+              shell            => '/bin/bash',
+              uid              => '501',
+     }
+	 
+	 watch video: 29:30 video number 29.30
+
+
+........................................................in Puppetagent................
+puppet agent-t
+..65 ..line in managment after..
+puppet agent-t       ...geeting test user created.. 
+created or not check...
+cat /etc/passwd   ...see last .. user created
+
+............................................................................................
+
+
+
+
+.............................IN PUPPET.....................
+
+	 ..
+	 openssl passwd -1   .. give passwd... then encripted passward given past in to abou scrip
+	 nano site.pp        ....past that code ... pp means poppet polyice
+	 then go clint...
+	 
+user { 'testuser2':
+ 	      ensure           => 'absent',
+              home             => '/home/testuser2',
+              password         => '!!',...................enter encripted pass
+              password_max_age => '99999',
+              password_min_age => '0',
+              shell            => '/bin/bash',
+              uid              => '502',
+     }
+	 watch..video 34.00...
+
+................................................
+........................................................in Puppetagent................
+puppet agent-t
+..65 ..line in managment after..
+puppet agent-t       ...geeting test user created.. 
+created or not check...
+cat /etc/passwd   ...see last .. user created
+
+............................................................................................
+
+
+
+
+user { 'testuser1':
+ 	      ensure           => 'absent',
+              home             => '/home/testuser2',
+              password         => '!!',...................enter encripted pass
+              password_max_age => '99999',
+              password_min_age => '0',
+              shell            => '/bin/bash',
+              uid              => '501',
+     }
+
+user { 'testuser2':
+ 			  ensure           => 'present',
+              home             => '/home/testuser2',
+              password         => '!!',...................enter encripted pass
+              password_max_age => '99999',
+              password_min_age => '0',
+              shell            => '/bin/bash',
+              uid              => '502',
+     }
+
+
+
+
+................................................
+........................................................in Puppetagent................
+puppet agent-t
+..65 ..line in managment after..
+puppet agent-t       ...geeting test user deleted.. 
+created or not check...
+cat /etc/passwd   ...see last .. user deleted..
+
+............................................................................................
+
+
+installing nginx into  puppet..(39.09)...
+
+
+
+
+
+
+
+
+

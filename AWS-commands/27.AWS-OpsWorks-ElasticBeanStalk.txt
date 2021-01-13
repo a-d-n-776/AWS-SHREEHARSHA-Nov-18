@@ -1,0 +1,67 @@
+27.AWS-OpsWorks-ElasticBeanStalk:
+
+1.Compute-Elastic Beanstalk: PAAS...
+
+It is a PAAS.
+Google-aws tomcate snales
+https://github.com/aws-samples/eb-tomcat-snakes
+in winos git,Java in that Jdk ,java -version,
+
+DO This one.. to create Root.war file..
+...IN GIT-  git clone git@github.com:awslabs/eb-tomcat-snakes.git,
+cd eb-tomcat-snakes,~/eb-tomcat-snakes$ ./build.sh,(or-in winos-)  
+build-windows.sh
+
+
+Benstalk-CreateNewApplication-Name,decrip-CreateOne-WebServerEnv-Select-Domian,Platform(Tomcate),
+Uplode yourcode selctThat root.war ..version-1.0 -  ,-Uplode,-
+ --Configure MoreOption-
+-Network(Setvpc& subnet)-Instances(T2MICR0)-Security(key)-Database( Postgres,9.4.7,t2mediam,)- Create env..
+
+[ https://github.com/aws-samples/eb-tomcat-snakes/blob/master/src/com/snakes/model/Movie.java   .. Read 264 code..]
+
+
+Jenkines diss..@38.00
+
+..Actions-Terminate Env- wait for some time(10-20mints)- Actions -Delte application.. 
+
+
+................................................................................
+.........
+2.OpsWorks:(18.50)......... for ConfigureManagement..
+
+2.1)AWS OpsWorks Stacks: Free service..for config ..
+
+Chef or Pupeet If Youu Know Very Eassy to Under Stand...
+Google -andrew puch github- https://github.com/andrewpuch?tab=repositories
+,  
+.......he is good Devops Enginerr...
+https://github.com/andrewpuch/personal-site
+
+........................................strt here..........
+
+.Opswork-AddaStack-Chef 11 Stack-Name,vpc,subnet,Key,-Advance,UseOpsSecurityGroup-N0,Add Stack
+.Layers-Add a LAYER- OpsWorks(Layer-PHPappser,SEG-Selct-)-AddLayer
+
+.Network(Publicip-Yes - Save), 
+
+
+.APSS-(24.28)-AddAPP-Name,,,RepositoryUrl(clone that gitlink past here)
+-AddAPP
+
+
+Stack-(25.24) -Add an Instance-Addinstance-(hostname,size(t2micro),subnet,)-AddInstanc
+..-Instances- Start-...
+..After 10-20mintus..
+
+Go instance- and copy public ip past in browser...
+
+
+
+
+
+2.2):OpsWorks for Chef Automate:  paidd service..
+
+
+
+2.3): OpsWorks for Puppet Enterprise::  paidd service..

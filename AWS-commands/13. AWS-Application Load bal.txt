@@ -1,0 +1,42 @@
+.................................................
+..............ALB................
+ALP -HTTP/HTTPS And Path Based Routing.
+
+WWW.weekendent.com-movies
+                  /Shows- shows
+                  /
+....Route53 ...........
+.Go Daday- create hosted zone-copy Dns servers to past go daday
+.launch instances 3re instances( 2 inst for my prime, and 1 inst for shows) 
+#!/bin/bash
+yum update -y
+yum install nginx -y
+service nginx start
+... logine serverexample append ..google cat eof for writng without logine to file..
+
+cat <<EOF>> /usr/share/nginx/html/index.html   ...................directlly entering data in to file.....
+
+> <h1 > WEBSERVER -1</ h1>
+>EOF
+
+..give server name WEBSERVER -1,WEBSERVER -2,shows...
+.Load balancer-ALB-LBProtocoal Http-80-VPC-AZ-(AZ I can add after also..)
+  SCG--Creat A New Tagrget group(or existed select)-http-80-select inst add registerd-reviw-creat.
+.LOad balancer-DNS-Route53.... ( Creat record set-- selct aleas shows ALB DNS or Cname past DNS.)
+wget,
+nano /usr/share/nginx/html/index.html
+cp index.html index.html_old
+nano index.html
+
+...
+crate a target group  one for -shows(1 inst.), and another one alred created myprime (2 instances)
+.......
+GO Load balancer - liseners- view/edit rules-add + mark -- if the path is /shows/*  forward to shows , simmlarlly
+ .mkdir shows, cp index.html shows/index.html , ll,
+ . for path based routing...
+ .LOAD BALACER- EDIT Load Balncer Attributes-access logs-enable -give s3 bucket-
+ .cookes enable(Stickiness)- target groups - edit attributes- stickiness-enable.. give time also..
+
+..godaday-NLB(EXTERNAL Facing.)-4WEBSERVERS(code to connect ALB,Node js or php)- ALB(Interal Facing)-2 Application Servers..--DB
+
+ .....................

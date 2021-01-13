@@ -1,0 +1,28 @@
+
+
+Migration & Transfer:::......
+..............................................
+1.Snowball::(data moving only,like box, 10gb connectivety, 80terrabytes supportes one box,encripted for portable purpouse
+,aws snow mobi- like truck 40gb connectivety bunch of snow balles in side truck, 
+we use this services for not having enf bandwidth, snowball edge.study dock)
+
+2.Server Migration Service:: ( virtual servers not for physical servers, free tool,
+ google search aws sms limits, onprimisess to cloude, to over com use 3rd party tools lik platespin migrate aws,cloud endure,zerto aws )
+ 15.54 .. video harshas desktop..(google - aws sms user guide,planning diffuclt but implementation easy,
+ google - aws 6r , acess key and security key required,replication,finally creating AMI)
+
+3.Database Migration Service(crating one instnce to take replication from on premisiss to stor in aws RDS,or more given directions,trasfer over vpn)
+
+4.AWS Migration Hub:(SOME REGIONS AVILABLE)
+
+5.Application Discovery Service: (SOME REGIONS AVILABLE)
+
+
+
+
+
+6.AWS Transfer for SFTP:
+
+
+
+7.DataSync:

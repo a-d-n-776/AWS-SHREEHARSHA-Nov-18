@@ -1,0 +1,45 @@
+
+Developer Tools:::
+
+
+1..Cloud9: 
+
+ free service,.. Create env-name-env setting(vm,type)-next step-create env.(backend created one vm)
+google-tomcat snakes github.. go link..https://github.com/aws-samples/eb-tomcat-snakes
+then go to cloud9- git clone https://github.com/aws-samples/eb-tomcat-snakes.git
+{readme.md.. file edit ,cd eb-tomcat-snakes/,git status
+
+2.:: like github,or Bit Bucket.
+ create a repositery-Repository settings-create-
+
+3.CodeBuild::  
+like In jenkines...like mavines (java)... 
+
+---
+artifacts:
+   files:
+    - ROOT.war
+discard-paths: true
+phases:
+  install:
+    commands:
+          - "apt-get install git -y"
+          - "chmod 700 build.sh"
+          - "sh build.sh"
+version: 0.2
+
+
+
+
+4.CodeDeploy:::artiffact deploying on server...
+
+5.CodePipeline::abou alll step by step ..failed harsha due to NAT issue..
+
+
+6.CodeStar: all of this..
+
+
+
+
+
+7.X-Ray:

@@ -1,0 +1,67 @@
+
+Security, Identity, & Compliance:( Inspector )
+
+
+...
+1.Inspector:
+
+Project Hand over Time all checks(Only on EC2),Clinte euired for all os  and 
+gives Report( Amazon Inspector - Assessment Report Findings Report) 
+OS Harding,For secure...checking..cis bench mark Amazon linux,
+
+
+install vm...
+install nginx web server.
+install clinte of inspecter..below
+
+inspecter agent doc 
+https://docs.aws.amazon.com/inspector/latest/userguide/inspector_installing-uninstalling-agents.html#install-run-command
+
+wget https://inspector-agent.amazonaws.com/linux/latest/install
+.[root@ip-10-1-1-100 ~]# wget https://inspector-agent.amazonaws.com/linux/latest/
+......
+.[root@ip-10-1-1-100 ~]# ll
+total 36
+-rw-r--r-- 1 root root 35713 Dec  6 21:26 install
+.[root@ip-10-1-1-100 ~]# chmod 700 install
+.[root@ip-10-1-1-100 ~]# ll
+total 36
+-rwx------ 1 root root 35713 Dec  6 21:26 install
+.[root@ip-10-1-1-100 ~]# ./install
+
+Go-inspector-Assessment target-Create-Name,Key selct instance tage,-Save
+.Assessment Templetes-Create-Name,target(select),Rules packages(select all),Duration(15mintus),
+uncheck@Assesment Schedlu,-Create and Run. (31.24) go...
+.
+
+
+
+.......................................
+
+
+
+2.secretes manager(12.14),,,,,.....
+
+DB username,password given from hear, not in code, so code retrives and takes this id,pass and complet operation, for secur purpus..
+
+
+
+https://aws.amazon.com/blogs/security/how-to-create-and-retrieve-secrets-managed-in-aws-secrets-manager-using-aws-cloudformation-template/
+
+
+3.gaurd duty.(16.58)....
+
+.{IDS- Intrusion Dection Service(Protection from in aws nothing Gaurd Duty)
+ ;IPS- Intrusion Protection Service (Protection frm Hackers)}
+
+.using logs(cloud trail,VPC floelog,DNSLogs) - 
+
+
+
+
+4.amazone macie ....(27.43)
+
+
+mor inf    
+https://www.youtube.com/watch?v=LCjX2rsQ2wA
+

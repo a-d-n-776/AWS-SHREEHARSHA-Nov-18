@@ -1,0 +1,54 @@
+............... AUTO SCALING..........
+
+1. CREATING CUSTOM AMI..
+....................................
+
+
+#!/bin/bash
+yum update -y
+yum install nginx -y
+service nginx start
+chkconfig nginx on 
+...........................
+
+.yum install stress -y   .......stress clinte on amazone linux..
+.chkconfig nginx on       ........ for nginx server runs dirctlly my AMI deployed to vm...
+-crate image- Created AMI-use This AMI in Auto scaling Confi add..
+
+2.CRATE ELB.........
+...................................
+........................
+.NLB-----Creat Target..(Lisners Automatically added by auto scallin)
+.In this Domain add route 53 config..
+
+
+
+
+
+
+3. CREATE AUTOSCALING..- .........................
+.............................................
+.Launch config -Add MY AMI, machine,key, Then ,
+
+.{In Auto scalling group-vpc-add subnets-Advanced -load balacing check tick mark-add ELB..-next config scaling-policey -- 
+-Use scalling policies to adjst of this group-- scal b/t 1-3
+ increse groupsize-alearm set-CPU Utilization > 50 --add 2-inst
+ decreas groupsize-alearm set-CPU Utilization < 45 --rem 2-inst 
+ next- key -valu(geting server name) - reviw-creat auto scaling group}
+
+
+4.Create End user Traficc.. indirtlly using Stress tool  using....
+............................................................
+.service nginx status
+.stress    .....  stress --cpu 8 --io 4 --vm 2 --vm-bytes 128M --timeout 10s
+.cntrol+c...
+.ps -ef
+
+  .2757  0 19:32 pts/0    00:00:00 stress --cpu 8 --io 4 --vm 2 --vm-bytes 128M --timeout 20m
+  .
+
+
+.kill 2757
+
+end......
+.delt- NLB-Auto scalling..servrs terminte.............AMI Remove and Image also de register,,,snap shot also delet.....

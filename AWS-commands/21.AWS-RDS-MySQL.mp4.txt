@@ -1,0 +1,50 @@
+......AWS-RDS-MySQL..........
+Database::
+
+1.RDS:-Relational DB Systems-SL,Oracle,MySQl,Postgres,Maria,AWS Arora
+
+2.DynamoDB:-NoSql(Cassandra & Mondo)
+
+3.ElastiCache:- in Memory DB Used for caching( Redis and Memcached)
+
+4.Neptune:- very nwe DB- Graph DB
+
+5.Amazon Redshift:- Dataware Housing.
+......................................................
+.DATABASE-.....
+
+A.RDS::---(PAAS)
+.RDS-Subnetgroup create(used lats)- Create database-next- productionmysl-next-mysl5.7.23,t2.mediam2cpu4gbram,createreplica in dif AZ-
+generalpurpos(ssd),20gb,dbName,usename,pass-next-VPC,subnet group(alred created select),pulically accesable yes now,(realtime no),AZ(no preperance)
+-Selectsecg-Databaseoption( name,,,),Maintance,deletion p
+rotection,create database-wait for 5-10 mintus,-View DB instance detalis
+
+
+
+
+..at a time writing two DB like -cockrochDB..
+..DB Server Down when(a.instance failure,b.AZ-Down,c.Snapshot taken secondary..d.Region down)
+..primary and secondary in dfferent Zones deplying.....in RDS-instance action-reboot-selectrebootwithfailover-reboot- 
+ so one AZ DB Stoped so other side AZ DB becomes Primary
+
+
+
+......video 34.40...mysl work bench..
+.After DB Server up...
+nslookup pastendpoint of DB-geting one public ip- means primari DB Instanc like if failure we check it getting other ip...
+.. Mysql work bench- My sql connetion + -hostname(past end point),username-connect-enter pass-
+-succusfully made connetion-doubleclickonit-
+
+
+.SQL dUMP Use to test,(41.32); copythat code-past-excute-
+
+.in RDS-instance action-reboot-selectrebootwithfailover-reboot- so one AZ DB Stoped so other side AZ DB becomes Primary
+refres in Sql -here asking password becouse DB reboot and Primary goes Secondary and Secondary goes Primary...
+in winoscmd-ipconfig /flushdns, nslookup pastdbendpoint,
+
+
+
+..read replica settings-in DB-instancesinstanceactions-create read replica-
+-region-vpc-AZ-Public acess yes/no, -instance-multy AZ Depolyment-logs,-create read replica..
+
+.if read replica can do up(production)- goDB IN instances-Instance action- promaote red replica-now red becomes red and  write, and getting new endpoint..

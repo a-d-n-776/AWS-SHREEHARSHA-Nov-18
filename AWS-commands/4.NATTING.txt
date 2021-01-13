@@ -1,0 +1,76 @@
+1.CREATE VPC..
+2.CREATE a.PUBLIC SUB NET b.private sub net
+3.rout table a.one for public sub net assocate b. another For private sub net assocate..
+4.create NAT GAT In this add Public sub net..and create elastic IP
+5.IN Private  ROUT TABLE (2-b) Add this Nat GATE WAY ..........
+6.create a.one vm @ public subnet and b.another vm @private sub net
+7.
+
+.sudo su -
+.ssh ec2-user@10.10.2.100
+.nano naveen.pem
+.ssh -i naveen.pem ec2-user@10.10.2.100
+.ll
+.chmod 400 naveen.pem
+.ll
+.ssh -i naveen.pem ec2-user@10.10.2.100 .....logineed to other server.
+
+
+...................................................
+nano /etc/hostname
+nano /etc/hosts
+
+passwd root
+passwd ec2-user
+
+ssh-keygen  .....enter button 3re times...
+ls /home/ubuntu/.ssh
+ssh-copy-id ubuntu@node1
+
+
+
+
+
+
+
+
+
+...........................................................................................................................................
+
+
+[ec2-user@ip-10-10-1-100 ~]$ sudo su -
+[root@ip-10-10-1-100 ~]# ssh ec2-user@10.10.2.100
+The authenticity of host '10.10.2.100 (10.10.2.100)' can't be established.
+ECDSA key fingerprint is SHA256:6QdWrtL/gNyq/qOcGxkVTnJfzUK2x3gn5Zxu3zAjtv4.
+ECDSA key fingerprint is MD5:21:16:f1:13:9f:a9:7b:c5:00:a7:a1:00:cf:f7:7c:85.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added '10.10.2.100' (ECDSA) to the list of known hosts.
+Permission denied (publickey).
+[root@ip-10-10-1-100 ~]# nano naveen.pem
+[root@ip-10-10-1-100 ~]# ssh -i naveen.pem ec2-user@10.10.2.100
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@         WARNING: UNPROTECTED PRIVATE KEY FILE!          @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+Permissions 0644 for 'naveen.pem' are too open.
+It is required that your private key files are NOT accessible by others.
+This private key will be ignored.
+Load key "naveen.pem": bad permissions
+Permission denied (publickey).
+[root@ip-10-10-1-100 ~]# ll
+total 4
+-rw-r--r-- 1 root root 1671 Dec 23 14:07 naveen.pem
+[root@ip-10-10-1-100 ~]# chmod 400 naveen.pem
+[root@ip-10-10-1-100 ~]# ll
+total 4
+-r-------- 1 root root 1671 Dec 23 14:07 naveen.pem
+
+[root@ip-10-10-1-100 ~]# ssh -i naveen.pem ec2-user@10.10.2.100
+
+       __|  __|_  )
+       _|  (     /   Amazon Linux AMI
+      ___|\___|___|
+
+https://aws.amazon.com/amazon-linux-ami/2018.03-release-notes/
+10 package(s) needed for security, out of 11 available
+Run "sudo yum update" to apply all updates.
+[ec2-user@ip-10-10-2-100 ~]$

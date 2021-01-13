@@ -1,0 +1,132 @@
+.........................       ..........
+........AWS-Ansible-Basics.......
+
+Ansible,puppet,chef,saltstack,
+ansible----ssh only.. remaing requried clint side agent installation..
+..launch 2inst..ubuntu 16.04..
+ give names of vms 1.controller and 2.nod1
+ name reulation controller...nod1 ping controller... check pingong simillarly vias versa..
+
+ ..login to controller..using putty..
+ ....... cahnging host name........
+ ..A..login putty.. controller instance....
+
+1.root@ip-10-1-1-100:~# nano /etc/hostname   chane pvt.ip   to controller
+2.root@ip-10-1-1-100:~# nano /etc/hosts      past pvt.ip this vm     controller.local   controller
+                                           past pvt.ip other vm    node1.local        nod1
+3.root@ip-10-1-1-100:~# reboot
+...
+4.ubuntu@controller:~$ sudo su -
+5.root@controller:~# ping node1
+
+Similarlly Other Server also.......................
+...
+6.root@controller:~# nano /etc/ssh/sshd_config    ...PasswordAuthentication no to changed yes .............
+7.root@controller:~# service sshd restart
+
+..... passward less login on inst to other inst...........................
+
+8.ubuntu@controller:~$ sudo su -
+9.root@controller:~# exit
+logout
+10.ubuntu@controller:~$ ssh ubuntu@node1
+The authenticity of host 'node1 (10.1.1.57)' can't be established.
+ECDSA key fingerprint is SHA256:D10h4nGxStXdXP5VrE+FTkYfqu3KsWb0n3wh6rJUOoU.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added 'node1,10.1.1.57' (ECDSA) to the list of known hosts.
+11.ubuntu@node1's password:       ..........asking pass word..
+
+
+..
+12.ubuntu@controller:~$ ssh-keygen  .....enter button 3re times...
+13.ubuntu@controller:~$ ls /home/ubuntu/.ssh
+authorized_keys  id_rsa  id_rsa.pub  known_hosts    .....rsa..privite file  and pub...public file
+...the abou line keys copies to node1... for password less authontification to login from controller server to nod1 server..
+so that, instially in node1 server we setting passwards  for 1.users(ubuntu) and 2.root ..then continue below steps 
+
+
+....in nod1 side setting passward like below... in server nod1..
+14.b..ubuntu@node1:~$ sudo su -
+15.b..root@node1:~# passwd root
+16.b..Enter new UNIX password:        ...12345 
+17.b..Retype new UNIX password:       ...12345
+18.b..passwd: password updated successfully
+19.b..root@node1:~# passwd ubuntu
+20.b..Enter new UNIX password:       ..54321
+21.b..Retype new UNIX password:      ..54321
+22.b..passwd: password updated successfully
+... now copy the key from controller to nod1....so login to server controller..then do like below..
+23.root@controller:~# ssh-copy-id ubuntu@node1
+24.enter passward ... 54321
+..so next..
+25.root@controller:~# ssh ubuntu@node1 .......now controller server to nod server login without password.......
+.... if exit ..then node1 server to coming back controller server like below...
+26.ubuntu@node1:~$ exit
+logout
+Connection to node1 closed.
+root@controller:~# 
+
+..install ansible on ubuntu16.04 in google search..
+...........................................................................................................................................
+https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-ansible-on-ubuntu-16-04
+login controller server ubuntu user...
+27.ubuntu@controller:~$ sudo apt-add-repository ppa:ansible/ansible  ..ENTER aSAKING ENTER ..
+28.ubuntu@controller:~$ sudo apt-get update
+29.ubuntu@controller:~$ sudo apt-get install ansible     ...asking give  y
+30.ubuntu@controller:~$ ansible --version ........getting version inf
+
+...................for adding ansible host file.....
+
+31.ubuntu@controller:~$ sudo su -
+32.root@controller:~# cd /etc/ansible/
+33.root@controller:/etc/ansible# ll
+...now open file add ...
+34.root@controller:/etc/ansible# nano hosts  .. add.. [servers]
+                                                   controlle node1
+
+35.root@controller:/etc/ansible# ansible -i hosts -m ping all .......install python requried instally .. and youdon controller to node1 .. copied key..
+  ubuntu16.04 python install pip .. google search 
+ 36.apt-get update 
+ 37.root@controller:~# apt-get install python-pip  ...aking .. y
+ 38.root@controller:/etc/ansible#
+39.root@controller:/etc/ansible# ansible -i hosts -m ping all
+40.root@controller:/etc/ansible# sudo passwd ubuntu  set pass.. 12345
+41.root@controller:/etc/ansible# ssh-copy-id ubuntu@controller .. enter 12345
+42.ansible -i hosts -m ping all..
+
+video 22.30.. ok.
+
+
+ 
+
+
+
+ 
+												   
+
+
+
+
+
+
+
+
+
+
+
+
+..B..login putty.. nod1 instance..
+ubuntu@ip-10-1-1-57:~$ sudo su -
+root@ip-10-1-1-57:~# nano /etc/hostname ..... chane pvt.ip   to controller
+root@ip-10-1-1-57:~# nano /etc/hosts   ..... past pvt.ip other vm    node1.local        nod1
+                                       .... past pvt.ip this vm     controller.local   controller
+root@ip-10-1-1-57:~#ping controller .....working ok...									   
+root@ip-10-1-1-57:~# reboot
+......
+ubuntu@node1:~$ sudo su -
+root@node1:~# ping controller
+...
+root@node1:~# nano /etc/ssh/sshd_config    ...PasswordAuthentication no to changed yes 
+root@node1:~# service sshd restart
+
+

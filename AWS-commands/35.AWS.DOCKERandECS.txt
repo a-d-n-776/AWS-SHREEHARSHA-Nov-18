@@ -1,0 +1,176 @@
+.....
+
+docker is comany name,
+
+.Monilithic And Microservice (Containers).
+
+a.install vm ubuntu16.04 LTS...(Long Tarm Support..)
+
+b.login ssh ubuntu@DNSpublicip,
+google - docks.docker....Docker CE-Linux-ubuntu-
+https://docs.docker.com/
+ https://docs.docker.com/install/linux/docker-ce/ubuntu/      ...vist web sit best...get all cmds
+ 
+sudo su -
+1.Update the apt package index:
+apt-get update
+
+2.Install packages to allow apt to use a repository over HTTPS:
+apt-get install \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    software-properties-common
+
+3.Add Docker’s official GPG key:
+ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+
+4.
+apt-key fingerprint 0EBFCD88
+
+5.version inf
+lsb_release -a
+
+6.
+sudo add-apt-repository \
+   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+   $(lsb_release -cs) \
+   stable"
+
+7.Update the apt package index
+apt-get update
+
+8.Install the latest version of Docker CE, or go to the next step to install a specific version:
+apt-get install docker-ce             ...asking  y/n ..enter y
+
+9.
+service docker status
+
+10.
+docker --version  ..geting Docker version 18.09.0, build 4d60db4  in this 18-2018,09-sep,
+
+11.continers running information..
+docker ps
+
+12.mor inf about continers click below link.......and google - continer name spaces and cgroups,
+ https://jvns.ca/blog/2016/10/10/what-even-is-a-container/
+ and google virtual machine vs continers..
+....................................................................................................................................
+
+13.docker rgistry or continer registery.
+https://hub.docker.com/ .....in search box search nginx with offical ..means company uploded..
+
+..pull docker going aboe web sit details of nginx
+docker pull nginx
+14.docker image relising details:--
+docker images
+15.starting continer...identifi root changed after below cmd enterd
+16.docker run -it nginx /bin/bash
+changed root  and alfha.. means enter into  continer....
+
+root@ip-10-1-1-100:~# docker run -it nginx /bin/bash
+root@3781a48cb4cd:/#
+17.so ifconfig,nano,ping, not working.............install .. apt-get install net-tools .. then try.. working..
+(...,, apt-get update,ap-get install nano net-utils,apt-get install net-utils,
+  ..apt-get install netutils.after installing packages, nano working)
+18.service nginx start, service nginx status
+
+19...cntrol+p+q  continer out side , like ... root@3781a48cb4cd:/# root@ip-10-1-1-100:~# ...........................................
+
+20...docker ps
+21...ifconfig  ...getting like below...
+             ...docker0   Link encap:Ethernet  HWaddr 02:42:45:88:7d:ae inet addr:172.17.0.1  Bcast:172.17.255.255  Mask:255.255.0.0 ..(private ip) after installed docker
+             ...eth0      Link encap:Ethernet  HWaddr 02:6b:a5:2d:f6:b4 inet addr:10.1.1.100  Bcast:10.1.1.255  Mask:255.255.255.0   ..by defult
+
+22...docker stop past docker id,        like.. docker stop 3781a48cb4cd
+23...docker rm past docker id,
+24..docker run -it --name nginx1 --hostname nginx1 -p 9000:80 nginx /bin/bash  ......
+           assining docker continer port number-80..to etho 9000 port number... lik .. below..
+           root@ip-10-1-1-100:~# docker run -it --name nginx1 --hostname nginx1 -p 9000:80  nginx /bin/bash
+           root@nginx1:/#
+
+25..service nginx start,
+26..service nginx status,
+27..cntrol+p+q .. continer out side .. like getting ..root@nginx1:/# root@ip-10-1-1-100:~#
+28.docker run -it --name nginx2 --hostname nginx2 -p 9100:80 nginx /bin/bash , 
+.service nginx start,service nginx status,
+.cntrol+p+q
+29.docker run -it --name nginx3 --hostname nginx3 -p 9200:80 nginx /bin/bash , 
+.service nginx start,service nginx status,
+.cntrol+p+q
+30..docker ps,  getting below like below.............................................
+CONTAINER ID        IMAGE               COMMAND             CREATED                  STATUS              PORTS                  NAMES
+bb04fc34e892        nginx               "/bin/bash"         About a minute ago       Up About a minute   0.0.0.0:9200->80/tcp   nginx3
+0212bc6cc874        nginx               "/bin/bash"         4 minutes ago            Up 4 minutes        0.0.0.0:9100->80/tcp   nginx2
+3ecb1c9a4d70        nginx               "/bin/bash"         11 minutes ago           Up 11 minutes       0.0.0.0:9000->80/tcp   nginx1
+......................................................................................
+31.checking working ....past public dns and chane ports 9000,9100,9200 ...getting nginx web sit...like below past browser..
+ http://ec2-34-201-205-123.compute-1.amazonaws.com:9000/    ...chane 9000,9100,9200
+ 
+32..docker exec -it nginx1 /bin/bash ...entering to continer nginx1 like getting..
+root@ip-10-1-1-100:~# docker exec -it nginx1 /bin/bash
+root@nginx1:/#
+33..apt-get update
+34..apt-get install nano       .. installing nano ..
+35..nano /usr/share/nginx/html/index.html   .. opening file of dispaying browse..   ...     
+36.service nginx restart,
+37..ifconfig, not getting..
+..apt-get install net-tools, google...ubuntu continer ifconfig..
+..ifconfig ..now getting..
+38..cntrol+p+q.....com out from docker.. 
+39..docker ps,... running continers list...
+40..docker commit,
+41..docker commit past continer id nginxcustom:v1
+42..docker images  ..show two dockerimages one we installed , other one  i cerated abou cmd used  v1 image of continer.. 
+https://hub.docker.com/ keep your continer image .. here repository.........
+.. pathes con not runn.. only updated continer image can deployed....40.00 watch... q&a time.. 
+ 
+...................38.52 vido time..................................................................
+...........................................................................................................................................................................
+.
+ ....ECS-ELASTIC CONTINER SERVICE........
+..compute.> ecs,cluster,create cluster,EC2 LINUX+N.W ,next setup,name,t2micro,key,vpc,subnets,secritygrop,create,
+ (backend cloud formation , role using to deployed)
+..open putty,
+.docker --version,
+..docker ps ... running continers inf..
+..GOOGLE..aws ecs nginx task defination..link below
+https://github.com/aws-samples/aws-containers-task-definitions/tree/master/nginx
+continer port :80, aws ecs host port-30000 to 32000 taken,
+. cloudwatch - logs- creat -action-create log group -awslogs-nginx-ecs -create a log group.
+.volumes-docker is state less -if failure docker your data gone, so we creating volumes ,,,
+..ecs-cluster-create new task definition- next ec2-next step-configure via json-pat that code- all automaticall filled abou..see..
+-create- go cluster- upto 54.00 video..
+cluster-select that one (naveen ecs cluster)-taskes-not having-run new task-ec2-run task
+now -taskes - one task running. select that task-go -details getting like below inf..
+means taks creating means creating continers...
+............
+Host Port	Container Port	Protocol	External Link
+32768	80	tcp	35.175.217.15:32768
+.......................................................
+go putty..
+[root@ip-10-1-2-245 ~]# docker ps
+CONTAINER ID        IMAGE                            COMMAND                  CREATED             STATUS              PORTS                   NAMES
+b7d4aa55446d        nginx:latest                     "nginx -g 'daemon of…"   4 minutes ago       Up 4 minutes        0.0.0.0:32768->80/tcp   ecs-nginx-naveen-1-nginx-aef387b5f6e9cef3d301
+4719f96f28c1        amazon/amazon-ecs-agent:latest   "/agent"                 37 minutes ago      Up 37 minutes  
+............................................
+..
+create a service - ec2-(myservice nane,replica-2)- next step-enable service discovery integeration (.) un check..-next step
+-next step-next-create a service
+login to putty....
+[root@ip-10-1-2-245 ~]# docker ps
+CONTAINER ID        IMAGE                            COMMAND                  CR         EATED             STATUS              PORTS                   NAMES
+e2136b7e0060        nginx:latest                     "nginx -g 'daemon of…"   2                          minutes ago       Up 2 minutes        0.0.0.0:32770->80/tcp   ecs-nginx-naveen-1                                                                                        -nginx-80baa8aaedd59fc92200
+29a039ca9ac1        nginx:latest                     "nginx -g 'daemon of…"   2          minutes ago       Up 2 minutes        0.0.0.0:32769->80/tcp   ecs-nginx-naveen-1                                                                                        -nginx-dca2bdf197ad89c9ca01
+b7d4aa55446d        nginx:latest                     "nginx -g 'daemon of…"   18         minutes ago      Up 17 minutes       0.0.0.0:32768->80/tcp   ecs-nginx-naveen-1                                                                                        -nginx-aef387b5f6e9cef3d301
+4719f96f28c1        amazon/amazon-ecs-agent:latest   "/agent"                 Ab         out an hour ago   Up About an hour                            ecs-agent
+.................................................................................................
+under services to replica created........2 ..
+so total taskes is 1+2(replica)= 3re total 3re continers in one server
+.............
+Host Port	Container Port	Protocol	External Link
+32769	80	tcp	35.175.217.15:32769
+..........
+Host Port	Container Port	Protocol	External Link
+32770	80	tcp	35.175.217.15:32770
+........................................................................................

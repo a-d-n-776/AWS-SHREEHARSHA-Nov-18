@@ -1,0 +1,51 @@
+37.AWS-Step Functions-Machine-Learning
+
+
+
+ lamda... maximum 5 mintus.. program excution time...3k secondes..... So over come this 
+using  Step Functions.
+.Step Functions used in server less computing..
+
+..APPLICATION INTEGRATION.......
+1.step function (server less computing lamda supportes 5mintus 3k secondes more than to run scriptes we use this step function,
+deploying recources to cloud formation to run dynamo DB and ext given .. like.
+ex:Step Functions-State machines-DynamoDB To SQS StateMachine-z9hurRgyPWU6-testing1-Visual workflow)
+
+2.Simple Queue Service (one application to communicate with another application this one used)
+
+3.simple notification service(SNS) ( topics- create new topics- selct that one and actions Subscrib to topic.. for triggering.. sett email or lamda.or more..)
+
+4.AMAZONE MQ (or apachi mq,  for messaging in betweetn application,,you can migrate messaging and applications without rewriting code.)
+
+5.SWF(softwer work flow): (same as step function every one using more step function...)
+..............................................................................................
+
+Machine Learning;;;;;;
+
+1.Amazon SageMaker (online sbi.com , chatboats trinng .. fixed dp inf, account opening like key wordes,,like pet traiing ..backend vm created)
+
+2.Amazon Comprehend... 
+
+chat board usage..(like call supportes standerd key wordes,and messaging also)
+https://chatbotsmagazine.com/chatbot-report-2018-global-trends-and-analysis-4d8bbe4d924b
+
+
+3.AWS DeepLens
+
+4.Amazon Lex (conversational interfaces using voice and text -booking ticket in mobil app..using key wordes..for creating chatboats)
+
+5.Machine Learning
+
+6.Amazon Polly  (Text-to-Speech)
+
+7.Rekognition (Deep learning-based visual analysis service Search, verify, and organize millions of images and videos)
+
+8.Amazon Transcribe
+
+9.Amazon Translate (english to german translatinnglik)
+
+10.Amazon Personalize
+
+11.Amazon Forecast
+
+.in meachine learning mathes and python reuired skilles

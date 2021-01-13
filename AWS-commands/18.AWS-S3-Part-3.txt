@@ -1,0 +1,38 @@
+
+------S3- BUCKET----
+...................Management...............
+.................................................
+
+1.Lifecycle::
+
+.Log files keeping more years-to archiving..
+
+
+
+2.Replication:
+.Cross-region Replication enables automatic and asynchronous copying of objects across buckets in different AWS regions.
+.Entire Bucket-next-bucke name- region select- next-save-
+.not bi directional.. but you can configure,,
+
+
+
+3.Analytics:
+.whic files acess more putiing to Standerd 1A, remaining kepping other ,, Wild photos watchin Tigers more..
+
+
+
+4.Metrics:
+.How many enduser are connecting, data usedand data transfered
+Storage,Requests,Data transfer, .. 1h-3h-12h-1d-1w-2w,
+ 
+
+
+
+5.Inventory::
+
+You can receive a file of your object inventory on a daily or weekly basis for the entire bucket or a shared prefix.
+
+Getting type of filess uploded and more,  
+
+.Q and A
+

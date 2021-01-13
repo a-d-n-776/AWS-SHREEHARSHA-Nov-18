@@ -1,0 +1,46 @@
+......AWS S3.....PART--1
+
+....
+Storage::
+
+1.S3-Simple storage service- Object storage..Google drive..Global..
+
+
+2.EFS-Elastic File System(NFS-Network file system or Shared folder)
+
+3.FSx-
+
+4.S3 Glacier-Archive Storage - Backups
+
+5.Storage Gateway- It is an appliance which can be on-perem or aws, which will allow
+  to connect s3 and Glacier to EC2 Machines..
+
+..................................................
+1..
+S3-Buckete-not public-object(Bucket inside data ,like amazone websit pics,,)-
+
+Storage class: in S3 Objects..
+
+Storage class	   Designed for	       Availability Zones	Min storage duration	Min billable object size	Monitoring and automation fees	Retrieval fees
+ 
+
+1.Standard	     Frequently accessed data	> 3    
+2.Intelligent-Tiering	Long-lived data with changing or unknown access patterns	> 3	30 days		Per-object fees apply
+3.Standard-IA	Long-lived, infrequently accessed data	> 3	30 days	128KB	-	Per-GB fees apply
+4.One Zone-IA	Long-lived, infrequently accessed, non-critical data	> 1	30 days	128KB	-	Per-GB fees apply
+5.Glacier	Data archiving with retrieval times ranging from minutes to hours	> 3	90 days	-	-	Per-GB fees apply
+6.Reduced Redundancy (Not recommended)	Frequently accessed, non-critical data	> 3	-
+
+........
+.S3 -Avilability , Durability.. google High avilabulity -wikipedia 99.99
+.google -s3 pricing........( retrive,Data Transfer pric,Data transfer out from amazone s3 to internet,)
+.
+
+.......AWS S3-Bucket Properties.......
+1.Versioning: Like Git Hub Repository..
+2.Server access logging:
+3.Static website hosting:
+4.Object-level logging:
+5.Default encryption:
+6.Advanced settings:
+( Object lock,Tags,Transfer acceleration,Events,Requester pays )

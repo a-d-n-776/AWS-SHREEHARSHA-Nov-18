@@ -1,0 +1,62 @@
+....................................
+Storage:::
+
+S3
+EFS
+FSx
+S3 Glacier
+Storage Gateway
+....................................
+
+
+1.EFS:::(NFS)or Share Folder:
+
+.is based on VPC and in Region only..Amazon EFS provides file storage for use with your EC2 instances.
+
+.create file system-VPC-Select subnetes-secgroup(2049)-nextstep-General purpode-nextstep-create file system
+ -getting File system id and DNS name....(14.12)
+
+.So 3re instances (1A,1B,1C) Deploy -in amzon AMI Defaul having EFS Clint other AMI Install clint,
+.login to server 1a -putty- nslookup past Dns addressof EFS,,simlarlly in remaing vms we getting pvt ips towards of EFS side..
+
+.Creating one folder in inst1-mkdir /1Afolder simllary inst2-mkdir /1Bfolder in inst3-mkdir /1Cfolder
+
+.mounting...(23.42)::
+
+ df-h,mount, see that in efs service having..lik.. sudo mount -t......./ /1Afolder , df -h,mount,
+ similarlly in inst 2 and 3rd-- sudo mount -t..../1Bfolder , sudo mount -t..../1Cfolder 
+ 
+.CREATING Files in 1Afolder so other server also can put and get i.e EFS..
+
+login into 1st instance..  cd /1Afolder/, nano 1Afile,
+logine into second inst .. cd /1Bfolder/, ll, the ist instance file 1Afile is ther..cp 1AFile 1Bfile, nano 1Bfile, ll
+login into 3rd inst ....   cd /1Cfolder/, ll ,her 1Afile,1Bfile visable, cp 1BFile 1CFile, nano 1CFile,ll
+..now 1Afolder,1Bfolderand 1Cfolder In side having sam all 3re files...
+
+......watch 35.38..to (server1 to mounting EFS 1B AND 1C using efs side pvtips(not DNS Of end point))
+login 1st inst, df-h, create folders,, mkdir 10-5-2-25,mkdir 10-5-3-25, this two folders mounting NFS side 1B and 1C pvtips..
+.sudo mount -t ...10.5.2.25:/ /10-5-2-25/
+.sudo mount -t ...10.5.3.25:/ /10-5-3-25/
+.df -h, ll /1Afolder, ll /10-5-2-25/, ll /10-5-3-25/ ...in every folder having sam files...
+
+. IF two member editing same file what happend???????( 44.28 )
+ data over write..nano 1A file,..
+
+
+
+...............S3 Glacier..........(48.00)
+
+.it is Archiving data..for ex bank logs keepin..etc..
+Glacer data for lone time but not aceesing mostlly..
+
+
+.createvalut-next-next-submit- in this i cant put data direlly by using 1. s3lifecyclepolicy
+  and 2.backup tool..google fast glacer downode softwer-go IAM-Create user add permision GLACER FULL CON
+ and  AKIAJKLLJJOAETPAQYDA  Q41xCHnDBU3Ja8PDHOLQ58ADQfLg0Qvv5F7ZxdE0
+ 
+ 
+
+
+
+
+ 

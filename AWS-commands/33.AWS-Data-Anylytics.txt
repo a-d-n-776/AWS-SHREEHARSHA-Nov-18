@@ -1,0 +1,32 @@
+..................
+Analytics::::
+
+1.Athena: UN STRUCHED DATA,S3 USED,LOGS,json,csv,EXTC Study doc,,,
+
+2.QuickSight:: like used in red shift Power BI for data visuvalation in pi chart and bar chart
+ select data from s3, athena,salsforce,sql,read shift  ..and more....watch video..12.02 ..
+
+
+3.EMR:(Elastic MapReduce): create cluster- config... used in hadoop (big data) backend installing vm...
+
+4.CloudSearch: create and config a search domine- uplode the data you want to search-send search re. to yur domine
+  for searching data like searching instagaram pics very fastlly
+
+5.Elasticsearch Service: (23.46)
+   ELK: Elastic Search Logstash Kibana
+   working: Logstash(logs of webserverlogs,application logs,)  Elasticsearch - Kibana
+   google - aws elb  kibana reports ... ex: modi is goole most searchable in india.. 
+   google search - logz.io  free trail use...https://logz.io/
+   
+   
+6.Kinesis:  google- kinessa vs kaifa-, BMW car in iot using sensores and  logs -services..
+
+7.Data Pipeline:(39.00)  Data Pipeline helps you move, integrate, and process data across AWS compute and storage resources, 
+as well as your on-premises resources. AWS Data Pipeline supports integration of data and activities across multiple AWS regions.
+.data moving rds to s3 like all..
+
+8.AWS Glue:  google- aws athena glue -imeges-..
+
+
+
+9.MSK:: 

@@ -1,0 +1,65 @@
+........
+....................................
+
+ lsblk, df -h, cd /media/ephemera10, pwd, clear
+ mkdir testfolder, cd testfolder/, nano file1
+ cp file1 file2, cp file 1 file3, cp file1 file4, cp file1 file5
+ ll, cd /, cler
+ ...
+
+ lsblk, create a volumeS( Volume in az-a is assined becase inst is ther in same A.Z,vol2{in az-b not assined ..})..
+   and assine to inst..( wher instance  is .. ther only create volume..in that AZ)..after assinging volume to inst..
+
+.....creating disk...to....part.......... 
+
+lsblk, fdisk /dev/xvdf, m, p, n, p (primary and enter 3re times), w (save),
+ fdisk /dev/xvdf, p, q, lsblk,
+
+........creating file system...................
+
+lsblk, mkfs.ext3 /dev/xvdf1, 
+
+.........creating one folder.................
+
+mkdir /6gbdrive, 
+
+.............that folder mounting............
+
+ mount /dev/xvdf1 /6gbdrive, clear, df -h,
+
+
+.............................
+ cp -rf /media/ephemera10/testfolder/ /6gbdrive/, ls /6gbdrive/, ls /6gbdrive/testfolder/  ...... copying from ephrmal tesfolder to 6gbdrive..
+ ls /media/ephemera10/testfolder/   
+ 
+
+if i am stop and start .. epharmal inside testfolder gone, and 6gbdrive also gone , becuse of one instance can have one EBS.. only
+becuse i done   mount /dev/xvdf1 /6gbdrive in ephemeral memory..in inst memory
+
+...............
+......i want to keep this EBS volume memory .......
+
+ nano /etc/fstab,    in that file  enter like......                 /dev/xvdf1	/6gbdrive ext3 defaults		0 0
+
+............stop and start.. instance ............
+
+ now stop and start inst  Then 1).inthis epharmal data gone ,2). but volume dat avilable..
+
+ lsblk, ll /media/ephermera10/ .......files gone..in ec2 memory..
+
+ ll /6gbdrive/,  ll /6gbdrive/testfolder/,  ....not efected files  in EBS Volume.. attached..volume..
+
+
+ ...........................................
+
+...... if i am expended volume size .....
+
+ lsblk, growpart /dev/xvdf 1, lsblk .....for partion..expansan
+ df -h, resize2fs /dev/xvdf1, df -h  .... for file system folder expansion..
+.
+
+ if i am terminated inst root volum gone,, but extra created volumes safely Avilable......
+
+
+ 
+

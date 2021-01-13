@@ -1,0 +1,21 @@
+aws introduction:::::::
+
+cloud providers:
+AWS
+AZURE
+GCP
+SOFTLAYER
+ORACLE
+ALIBABA
+LINODE
+DIGITALOCEAN
+
+..Path  -- AWS--AZURE--DEVOPS--CODING(PYTHON OR NODE JS OR BOTH)
+
+Harsha exp--13 yers exp -windows--vmware--storage/backup/nw--Degsign-Cloud-Archiect for DC and cloud.
+and freelancer in devops.. 
+aws dumps...waste..
+
+google aws certificate path...
+
+aws not using VMwere and using ctricks..

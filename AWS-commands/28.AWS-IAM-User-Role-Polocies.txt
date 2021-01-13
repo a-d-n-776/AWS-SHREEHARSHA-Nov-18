@@ -1,0 +1,66 @@
+28.AWS-IAM-User-Role-Polocies;
+Security, Identity, & Compliance:(IAM, )
+
+
+1.IAM:Globlelly Applicabale.
+
+ Groups,Users,Roles,Polices,
+
+..User Permission And Role Permission Differnce Below explained..
+
+.Deploy EC2 machine(for user1)-Give S3permision for One Group(User)- COpy userlogin URl and pasr in other browser-
+-create another VM (For user2) -in EC2 not having ARN No..,(so we used Tages..) - 
+create polices- google -Restrict aws user ec2 instance- go-  https://aws.amazon.com/premiumsupport/knowledge-center/restrict-ec2-iam/
+- 24.00 - edit code add tages(server1) ,Owner id, and past into valid json- then create custom police-give name of that policey- 
+similarly server-2 change Tages, and create policey..
+
+So now add that two differnt polices to two servers..assined
+ then loginto user console- now i am login user-1 i can visable 2vms but i can operating only one- other one i am not having permision..
+ simillary- User-2, having same-...
+
+
+.(30.57),if i am lauching ec2-getting error-that error can decode- goole decode aws error message-...
+
+
+
+similarlley we can restrict VPC Also.. in abou  separt Permision on machines for different users..,,
+
+ 
+Google-Restrict aws user vpc-.. , google -aws iam policey flow..
+
+https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html
+
+
+
+
+Roles;;; 44.43
+
+CROSS ROLE ACCESS(ONE A/C TO OTHER A/C SERVICES ACCING USING Roles..)
+
+..1 masteraws a/c - 10 aws a/c @ the time 10roles created in Master and given that 10 aws a/c respectivally..
+
+(Mavric a/c logine using ShreeHarsha ..(Master) a/c ..)...
+steps-(52.00)
+
+1.login Shreeharsha A/C-create role- selcct another a/c-(a/cid) - give admin access-Give role name-created.
+
+2.login Mavirik A/C- Create Police-(google- aws assume role policey. https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_policy-examples.html)
+ - copy Role ARN in Shreeharsha A/C- go mavric a/c-Past into this code create role policey-
+-givename-createpolicey..Apply this policey to user in Mavric a/c--
+
+
+3.Login to mavric user a/c - youcan not do any thing in this a/c-switch role-Account,Role,Displaynam,cloure,-switch role- now you can comto mavilrole in Harsha A/C
+
+
+So in this way all slave a/c we create Role and give permision in Master a/c ...
+
+[..her Mavric slave ( aws asume policy role crated heare )  and 
+  Sree Harsha ( Create role to Other a/c give marvic a/c id- permision Admin acess. ) Master A/C Account,.]
+
+
+for moore,,,,
+https://www.reancloud.com/blog/providing-cross-account-s3-access-for-kms-encrypted-objects/
+
+
+
+

@@ -1,0 +1,30 @@
+
+1.create a.one vpc naveen and other b. vpc narendra and having different CIDER
+2.create subnetets respective vpc's
+3.go peering connetion give from and to detales and to side requsit accepte.
+4.go rout tales and add cider block of from side vps address..(in rout table naveen vpc and naren vpc )
+5.login one server in vpc to other side vpc server..
+
+
+if two differen region conneton ,@ the time two differnent key req.. so one vpc public key assine other vpc by..
+onside server .. cmd
+ec2-metadata .....in this ssh-rsa full key copy.. and past other vpc (other region) import key and past created same publick key..
+
+6. tray traiseant gatway...............
+
+
+
+
+
+
+
+
+
+
+
+[root@ip-192-168-1-187 ~]# nano naveen.pem
+[root@ip-192-168-1-187 ~]# chmod 400 naveen.pem
+[root@ip-192-168-1-187 ~]# ll
+total 4
+-r-------- 1 root root 1671 Dec 23 17:58 naveen.pem
+[root@ip-192-168-1-187 ~]# ssh -i naveen.pem ec2-user@10.1.1.222

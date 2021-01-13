@@ -1,0 +1,72 @@
+..SYSTEMS MANAGER SERVICES(SMS)....... OR SSM - System State Manage
+
+
+
+Running cmds or scripts remotly.
+Patching - Updates.
+State Compliance and Automation.( Ansible configuration like )
+
+User: A persone who log in to AWS Manage it.
+
+Group: Set of users are a group
+
+Role: For Accessing one aws service to other AWS service( like S3 - Ec2)
+
+
+1.create one role:..........
+
+-IAM- role- create-EC2-select police(SSMF)- Create Role name
+
+2.Create 2 INst(with role):............
+
+-IN aws Linux Deful having SMS clinte other AMI'S Reuired SMS clint
+- That 2 inst one add IAM Role Other one don't add..
+
+A..SMS--
+
+3.SMS- RUN Command-Run cmd- select AWS-RunShellScript-select instance(one visable so othher one not vis so add role to that vm)-
+-( ps -ef, nohup /usr/bin/amazon-ssm-agent restart, )- now visable 2 instances-
+-select 2 inst(if having 100s of server use Tages.. to runing scriptes) - commands-
+..creating users.......
+#!/bin/bash
+sudo useradd testuser1
+sudo useradd testuser2
+-Run- status - sucess-
+.login to servers check-. cat /etc/passwd - in last creating users(like, sudo useradd testuser1 ,sudo useradd testuser2)
+
+..delcting users...
+#!/bin/bash
+sudo userdel testuser1
+sudo userdel testuser2
+-run-check status-login to server check-cat /etc/passwd- that use's deleted..
+
+..install packages like nginx and more ---- using run -scripts ...(for fully customizedmeans configuring .. using chef, ansible,)
+
+
+B..AUTOMATIONS::....................
+
+--Creating documntation and runinng scripts.....
+
+.for creating snap shots..
+.
+
+C..State Manger::.......................
+
+- selct-for shdule running....for crating images sheduled..
+-selct crate image- everyday -time-selcted insted created crating peroically-and -keep backups..simillary in lifecycle Manger for snap shots ,hear images can taken 
+-
+
+
+
+
+
+D.Configuration and compliance::
+ -for onpremisis.. purpuse used...
+
+
+......system manager shared resource..........
+
+
+
+
+

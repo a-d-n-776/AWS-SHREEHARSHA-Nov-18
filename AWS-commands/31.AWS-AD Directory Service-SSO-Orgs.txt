@@ -1,0 +1,89 @@
+ ............................................................
+A..Security, Identity, & Compliance:
+   ................................:
+
+1.Directory Service:
+
+  .Directory service -setup-aws managed microsoft AD-next-standerd-
+(naveenmj.xyz,,this is my corp AD domine,pass)-next- vpc- selct two subnet, (backend two vms created) ,
+-Create Directory. Backe end two winos vms deploying two Differ A.Z..Takes Time(This is PAAS )
+
+
+.(8.13) .Lanch one vm- Microsoft Windows Server 2016 Base - free - t2Large(2 Core,8GBRAM) ,,,login to windows server ...user-Administrator, pass: ..
+
+.Installing ADTolles-:(13.28)-OpenSystemManager-Manager-AddRolesandFeature-Next-Next-RemoteServerAdministrationTolls-
+in that-RoleAdministn.Tolls-select.AD DS and AD LDS Tools-Next-Install- after instaall-Close.
+
+.Changing system name:-(17.19)-Open RUN- Type sysdm.cpl-Change-Givename(DC01)-ok- close-restart.
+31.55-Go..Now login to Windos vm- Run-Type sysdm.cpl- in Workgroup name changin
+.Run-cmd-ipconfig /all- in DNS Servesi want to change(By adding Directory servers DNS's)- and also chaning DHCP Server-(34.22)
+- ncpa.cpl- Select Ethernet-Properties-SelectIPV4-Properties-Selct Use the follingIPaddress..and sAME IPADREESAND ALL, 
+ BUT DNS Server add that two in  Created Directory servers...-add advance add this DNS server als0-ok-ok-close. Now dissconting and Re connecting...
+ .(37.04)IN cmd- sysdm.cpl-Change-give dominname(naveenmj.xyz)-ok. 
+  asking Id and Passwd(use id ,pass @ creating of Directory servic server's..)-Restart Computer asking-ok
+
+.now This serveic integrating to AWS Single Sign-On...... Reuird Below configur instially..
+ 
+ Login Windos Vm in Morechoice-use a differ a/c-Enter id pass.(naveenmj/admin,pass)-Watch(42.00)
+
+...now go single singn on (45:07).......
+
+
+
+2.AWS Organizations:(18.27) 
+
+ .master account my self i am adding other accounts by invit or creating new aws account,
+  but billing of added accounts  getting master account
+ .Organtsation:organize like (one project differnt under differ a/c..organizing.. 
+   Exam-TCS Uder Pasport,SBI in this under adding a/c's)
+ .Plolices:CreatePolices-Policgenrate-name,dec,Statmentbuilder,-CreatePolyce. for more google -  scp policces..
+  Selct That policy-Add Accounts or Orgination-Roots - Atach.
+
+
+3.AWS Single Sign-On: 
+
+...now go single singn on (45:07).......
+.AWS single singn on-Directory-ChaneDirctory-Microsoft AD directory-Next-Finsh.(Now by Defalut taken...)
+ So now AWS SSO connecting TO Directory Servic(Instaly disconeting from sso then conneting to ADDs)-ok.(47.19).
+ 
+
+  (1.02.20)-- de comsining...(Master aws a/c-Mavric Remove users like Shreeharsha, - Go SSO and refrsh,Go a/c and RemoveAcess,Permision set also Remov,Go Permision set Select Delet-
+  - GO active DirectryService,Directory,ChangeDirection,SelcetAWS SSO Directry,Finsh,in Directories,Select Delet - EC2 Terminate Winows Vm. )
+
+
+
+
+.................................
+Administrator
+
+oIw;dN@6Me=3t%UQ2?BCChvG)!uVMnGi
+
+
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+
+Ethernet adapter Ethernet:
+
+   Connection-specific DNS Suffix  . : ec2.internal
+   Description . . . . . . . . . . . : AWS PV Network Device #0
+   Physical Address. . . . . . . . . : 0A-CC-E0-6C-F6-96
+   DHCP Enabled. . . . . . . . . . . : Yes
+   Autoconfiguration Enabled . . . . : Yes
+   Link-local IPv6 Address . . . . . : fe80::4a:7a7b:75ab:f3f1%3(Preferred)
+   IPv4 Address. . . . . . . . . . . : 10.1.3.100(Preferred)
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0
+   Lease Obtained. . . . . . . . . . : Wednesday, January 16, 2019 11:02:33 AM
+   Lease Expires . . . . . . . . . . : Wednesday, January 16, 2019 12:02:32 PM
+   Default Gateway . . . . . . . . . : 10.1.3.1
+   DHCP Server . . . . . . . . . . . : 10.1.3.1
+   DHCPv6 IAID . . . . . . . . . . . : 101340631
+   DHCPv6 Client DUID. . . . . . . . : 00-01-00-01-23-D0-C0-3F-0A-CC-E0-6C-F6-96
+   DNS Servers . . . . . . . . . . . : 10.1.0.2  .................................................. 
+   NetBIOS over Tcpip. . . . . . . . : Enabled
+
+
+.ncpa.cpl
+
+
+
+
+
